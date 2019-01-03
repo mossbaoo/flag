@@ -3,10 +3,10 @@
  * Author: Moss
  */
 .container {
-  padding: 0 20rpx;
+  padding: 0 30rpx;
 }
 .container .myFlag {
-  padding-top: 60rpx;
+  padding-top: 70rpx;
 }
 .container .myFlag .top {
   display: flex;
@@ -17,6 +17,7 @@
 .container .myFlag .top view {
   height: 40rpx;
   border-bottom: 1px solid #000;
+  padding-right: 15rpx;
 }
 .container .myFlag .top text {
   color: #ff0000;
@@ -33,20 +34,89 @@
 }
 .container .myFlag .bottom text {
   font-size: 26rpx;
-  padding-left: 5rpx;
+  padding-left: 4rpx;
 }
 .container .select {
-  padding: 100rpx 50rpx 0;
+  padding: 100rpx 40rpx 0;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 .container .select .item {
-  width: 40%;
+  width: 45%;
   font-size: 30rpx;
   color: #000;
   height: 100rpx;
+  margin-bottom: 20rpx;
 }
-.container .select .item text {
+.container .select .item view {
+  display: inline-block;
   line-height: 35rpx;
+}
+.container .select .item view text {
+  font-size: 30rpx;
+  color: #CC6633;
+  padding-right: 5rpx;
+}
+.container .change {
+  display: flex;
+  justify-content: center;
+}
+.container .change .box {
+  position: relative;
+  width: 120rpx;
+  height: 120rpx;
+  font-size: 28rpx;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container .change .box .bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  display: block;
+  width: 120rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  background: #333;
+  border-radius: 10rpx;
+}
+.container .change .box .iconfont {
+  font-size: 36rpx;
+  padding-top: 22rpx;
+}
+.container .input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 80rpx;
+  border: 1px solid #333;
+  padding: 0 5rpx 0 30rpx;
+  margin: 100rpx 40rpx 0;
+}
+.container .input input {
+  width: 400rpx;
+  height: 80rpx;
+  font-size: 30rpx;
+}
+.container .input button {
+  width: 150rpx;
+  line-height: 60rpx;
+  border-radius: 60rpx;
+  border: 1px solid #333;
+  font-size: 30rpx;
+}
+.container .next {
+  margin: 100rpx 40rpx 0;
+}
+.container .next button {
+  line-height: 80rpx;
+  background: #333;
+  font-size: 30rpx;
+  color: #fff;
+  border-radius: 80rpx;
 }

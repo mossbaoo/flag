@@ -5,13 +5,20 @@
 
 <view class="container">
   <view class="myFlag">
-    <view class="top"><view><text class="iconfont icon-qizi"></text>已添加0/9</view></view>
-    <view class="bottom"><view>点击查看<text class="iconfont icon-xiala"></text></view></view>
+    <view class="top"><view><text class="iconfont icon-qizi"></text>0/9</view></view>
+    <view class="bottom"><view>Flag<text class="iconfont icon-xiala"></text></view></view>
   </view>
   <view class="select">
     <block wx:for="{{showFlagArr}}" wx:for-index="index" wx:for-item="item">
-      <view class="item"><text bindtap="selectFlag">{{item}}</text></view>
+      <view class="item"><view bindtap="selectFlag"><text class="iconfont icon-circle"></text>{{item}}</view></view>
     </block>
   </view>
-  <view class="change"><text bindtap="showFlag">换一换</text></view>
+  <view class="change">
+    <view class="box" bindtap="showFlag"><text class="iconfont icon-sync"></text>换一换<text class="bg"></text></view>
+  </view>
+  <view class="input">
+    <input type="text" placeholder="输入一个flag" bindinput="flagInput" />
+    <button>添加</button>
+  </view>
+  <view class="next"><button>下一步</button></view>
 </view>
