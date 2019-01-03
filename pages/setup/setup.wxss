@@ -1,0 +1,37 @@
+/**
+ * Page: 建立flag
+ * Author: Moss
+ */
+.container {
+  padding: 0 20rpx;
+}
+.container .myFlag {
+  padding-top: 60rpx;
+}
+.container .myFlag .top {
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  color: #000;
+}
+.container .myFlag .top view {
+  height: 40rpx;
+  border-bottom: 1px solid #000;
+}
+.container .myFlag .top text {
+  color: #ff0000;
+}
+.container .myFlag .bottom {
+  height: 40rpx;
+  display: flex;
+  align-items: center;
+  font-size: 26rpx;
+  color: #000;
+}
+.container .myFlag .bottom view {
+  margin-left: 10rpx;
+}
+.container .myFlag .bottom text {
+  font-size: 26rpx;
+  padding-left: 5rpx;
+}

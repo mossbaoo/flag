@@ -1,0 +1,16 @@
+<!--
+  Page: 建立flag
+  Author: Moss
+-->
+
+<view class="container">
+  <view class="myFlag">
+    <view class="top"><view><text class="iconfont icon-qizi"></text>已添加0/9</view></view>
+    <view class="bottom"><view>点击查看<text class="iconfont icon-xiala"></text></view></view>
+  </view>
+  <view class="select">
+    <block wx:for="{{showFlagArr}}" wx:for-index="index" wx:for-item="item">
+      <view class="item" bindtap="selectFlag">{{item}}</view>
+    </block>
+  </view>
+</view>
