@@ -35,3 +35,18 @@
   font-size: 26rpx;
   padding-left: 5rpx;
 }
+.container .select {
+  padding: 100rpx 50rpx 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.container .select .item {
+  width: 40%;
+  font-size: 30rpx;
+  color: #000;
+  height: 100rpx;
+}
+.container .select .item text {
+  line-height: 35rpx;
+}

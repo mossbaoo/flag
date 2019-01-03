@@ -14,7 +14,7 @@ Page({
   // 展示随机flag
   showFlag() {
     let showFlagArr = [];
-    for(var i=0; i<9; i++) {
+    for(var i=0; i<6; i++) {
       let index = parseInt(Math.random()*this.data.flagArr.length);
       showFlagArr.push(this.data.flagArr[index])
     }

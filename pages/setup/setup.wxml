@@ -10,7 +10,8 @@
   </view>
   <view class="select">
     <block wx:for="{{showFlagArr}}" wx:for-index="index" wx:for-item="item">
-      <view class="item" bindtap="selectFlag">{{item}}</view>
+      <view class="item"><text bindtap="selectFlag">{{item}}</text></view>
     </block>
   </view>
+  <view class="change"><text bindtap="showFlag">换一换</text></view>
 </view>
