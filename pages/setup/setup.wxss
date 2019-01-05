@@ -50,7 +50,7 @@
   margin-bottom: 20rpx;
 }
 .container .select .item view {
-  display: inline-block;
+  display: flex;
   line-height: 35rpx;
 }
 .container .select .item view text {
