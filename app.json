@@ -1,7 +1,8 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/setup/setup"
+    "pages/setup/setup",
+    "pages/share/share"
   ],
   "window":{
     "backgroundTextStyle":"light",

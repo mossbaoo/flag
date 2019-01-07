@@ -1,4 +1,5 @@
 
+const app = getApp();
 const util = require('../../utils/util.js')
 
 Page({
@@ -24,9 +25,11 @@ Page({
       {id: 18, name: '周末绝不宅在床上', checked: false},
       {id: 19, name: '一定要多多运动', checked: false},
       {id: 20, name: '戒掉手游，再玩剁手', checked: false},
+      {id: 21, name: '去看一场爱豆的现场演出', checked: false},
     ],
     showFlagArr: [],
     myFlagArr: [],
+    flagInputValue: '',
   },
 
   onLoad() {
@@ -36,23 +39,15 @@ Page({
   // 展示随机flag
   showFlag() {
     let showFlagArr = [];
+    let showFlagIdArr = [];
     for(var i=0; i<6; i++) {
       let randomNum = parseInt(Math.random()*this.data.flagArr.length);
-      console.log(randomNum)
-      if(showFlagArr.length<=0) {
+      if(showFlagIdArr.indexOf(this.data.flagArr[randomNum].id) == -1) {
         showFlagArr.push(this.data.flagArr[randomNum])
+        showFlagIdArr.push(this.data.flagArr[randomNum].id)
       }else {
-        for(var j=0; j<showFlagArr.length; j++) {
-          if(showFlagArr[j].id == this.data.flagArr[randomNum].id) {
-            // i--;
-            console.log(1)
-          } else {
-            showFlagArr.push(this.data.flagArr[randomNum])
-            console.log(1)
-          }
-        }
+        i--;
       }
-      
     }
     this.setData({
       showFlagArr: showFlagArr
@@ -63,13 +58,17 @@ Page({
   selectFlag(e) {
     if(this.data.myFlagArr.length < 9) {
       if(!e.currentTarget.dataset.checked) {
-        let index = '';
+        let flagIndex = '';
         let myFlagArr = this.data.myFlagArr;
-        
-        myFlagArr.push(this.data.flagArr[index]);
+        this.data.flagArr.forEach((item, index) => {
+          if(item.id == e.currentTarget.dataset.id) {
+            flagIndex = index
+          }
+        });
+        myFlagArr.push(this.data.flagArr[flagIndex].name);
         this.setData({
           myFlagArr: myFlagArr,
-          ['flagArr['+index+'].checked']: true,
+          ['flagArr['+flagIndex+'].checked']: true,
           ['showFlagArr['+e.currentTarget.dataset.index+'].checked']: true,
         })
       }else {
@@ -84,6 +83,39 @@ Page({
         icon: 'none'
       })
     }
+  },
+
+  // 输入flag
+  flagInput(e) {
+    this.setData({
+      flagInputValue: e.detail.value
+    })
+  },
+
+  // 添加flag
+  addFlag() {
+    if(this.data.myFlagArr.length < 9) {
+      let myFlagArr = this.data.myFlagArr;
+      myFlagArr.push(this.data.flagInputValue)
+      this.setData({
+        myFlagArr: myFlagArr,
+        flagInputValue: ''
+      })
+    }else {
+      wx.showToast({
+        title: '最多9个flag',
+        icon: 'none'
+      })
+    }
+  },
+
+  // 下一步
+  nextStep() {
+    app.globalData.myFlagArr = this.data.myFlagArr;
+    console.log(this.data.myFlagArr)
+    wx.navigateTo({
+      url: 'test?id=1'
+    })
   },
 
 })

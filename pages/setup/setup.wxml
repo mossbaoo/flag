@@ -17,8 +17,8 @@
     <view class="box" bindtap="showFlag"><text class="iconfont icon-sync"></text>换一换<text class="bg"></text></view>
   </view>
   <view class="input">
-    <input type="text" placeholder="你还可以自己输入flag" bindinput="flagInput" />
-    <button>添加</button>
+    <input type="text" placeholder="你还可以自己输入flag" bindinput="flagInput" value="{{flagInputValue}}" />
+    <button bindtap="addFlag">添加</button>
   </view>
-  <view class="next"><button>下一步</button></view>
+  <view class="next"><button bindtap="nextStep">下一步</button></view>
 </view>
