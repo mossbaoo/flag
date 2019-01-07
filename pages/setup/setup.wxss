@@ -47,7 +47,7 @@
   font-size: 30rpx;
   color: #000;
   height: 100rpx;
-  margin-bottom: 20rpx;
+  margin-bottom: 30rpx;
 }
 .container .select .item view {
   display: flex;
@@ -61,6 +61,7 @@
 .container .change {
   display: flex;
   justify-content: center;
+  margin-top: 50rpx;
 }
 .container .change .box {
   position: relative;
@@ -96,7 +97,7 @@
   border-radius: 80rpx;
   border: 1px solid #333;
   padding: 0 5rpx 0 30rpx;
-  margin: 100rpx 40rpx 0;
+  margin: 200rpx 40rpx 0;
 }
 .container .input input {
   width: 400rpx;
@@ -107,11 +108,12 @@
   width: 150rpx;
   line-height: 60rpx;
   border-radius: 60rpx;
-  border: 1px solid #333;
   font-size: 30rpx;
+  background: #333;
+  color: #fff;
 }
 .container .next {
-  margin: 100rpx 40rpx 0;
+  margin: 50rpx 40rpx 0;
 }
 .container .next button {
   line-height: 80rpx;

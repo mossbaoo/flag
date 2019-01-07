@@ -4,7 +4,6 @@
  */
 
 const app = getApp();
-const wxRequest = require("../../../utils/request.js");
 
 Page({
 	data: {
