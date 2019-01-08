@@ -2,7 +2,7 @@ echo "# toolBox" >> README.md
 git init
 git add README.md
 git commit -m "first commit"
-git remote add origin https://github.com/mossbaoo/toolBox.git
+git remote add origin https://github.com/mossbaoo/flag.git
 git push -u origin master
 
 edit files
