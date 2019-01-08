@@ -114,7 +114,7 @@ Page({
     app.globalData.myFlagArr = this.data.myFlagArr;
     console.log(this.data.myFlagArr)
     wx.navigateTo({
-      url: 'test?id=1'
+      url: '/pages/share/share'
     })
   },
 

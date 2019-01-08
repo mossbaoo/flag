@@ -8,62 +8,20 @@ const app = getApp();
 Page({
 	data: {
 		host: app.globalData.host,
-		id: null,
 		detailData: {},
-		shareType: 0,
 		logo: '/images/logo.jpg',
 		goodsImage: null,
 		title: '',
 		text: '',
 		price: '',
-		code: '/images/code.jpg'
+		code: '/images/code.jpg',
+		myFlagArr: [],
 	},
 
-	onLoad(options) {
+	onLoad() {
 		this.setData({
-			id: options.id
+			myFlagArr: app.globalData.myFlagArr
 		})
-		this.getData(options.id);
-	},
-
-	// 获取商品信息
-	getData(id) {
-		let that = this;
-		wxRequest.post('/api/goods/goods/show', {
-			id: id,
-      access_token: app.globalData.access_token
-		}, '加载中').then(res=>{
-			if(res.code == 0){
-				this.setData({
-					detailData: res.data
-				})
-				wx.showLoading({
-					title: '加载中',
-				})
-				wx.getImageInfo({
-          src: this.data.host+res.data.image,
-          success (res) {
-            that.setData({
-              goodsImage: res.path
-            })
-						that.getCanvas();
-						wx.hideLoading()
-          }
-        })
-			}
-		})
-	},
-
-	// 切换类型
-	switchType(e) {
-		let type = e.currentTarget.dataset.type;
-		if(type == this.data.shareType){
-			return false;
-		}else {
-			this.setData({
-				shareType: type
-			})
-		}
 	},
 
 	// 生成图片并保存到本地

@@ -4,29 +4,10 @@
 -->
 
 <view class="container">
-  <view class="item" data-type="1" bindtap="switchType">
-    <view class="icon"><text class="iconfont {{shareType==1? 'icon-xuanze1':'icon-xuanze'}}"></text></view>
-    <view class="title">分享链接</view>
-    <view class="text">直接分享链接给好友</view>
-  </view>
-  <view class="content" hidden="{{shareType==0}}">
-    <view class="shareLink">
-      <button open-type="share">
-        <view class="icon"><text class="iconfont icon-weixin"></text></view>
-        <view class="text">微信好友</view>
-      </button>
-    </view>
-  </view>
-  <view class="item" data-type="0" bindtap="switchType">
-    <view class="icon"><text class="iconfont {{shareType==0? 'icon-xuanze1':'icon-xuanze'}}"></text></view>
-    <view class="title">分享图片</view>
-    <view class="text">保存图片发给好友</view>
-  </view>
-  <view class="content" hidden="{{shareType==1}}">
+  <view class="content">
     <canvas canvas-id="canvas"></canvas>
     <view class="bottom">
       <view class="button"><button bindtap="saveImage">保存图片</button></view>
-      <!-- <view class="button"><button>分享给好友</button></view> -->
     </view>
   </view>
 </view>
