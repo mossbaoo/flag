@@ -18,7 +18,8 @@ Page({
 	onLoad() {
 		let that = this;
 		this.setData({
-			myFlagArr: app.globalData.myFlagArr
+			myFlagArr: app.globalData.myFlagArr,
+			canvasHeight: app.globalData.myFlagArr.length*40+110+100
 		})
 
 		// 获取系统信息
@@ -38,17 +39,32 @@ Page({
 		var ctx = wx.createCanvasContext('canvas')
 		// 设置背景
 		ctx.setFillStyle('#333')
-		ctx.fillRect(0, 0, this.data.canvasWidth, 500)
+		ctx.fillRect(0, 0, this.data.canvasWidth, this.data.canvasHeight)
 		ctx.setFillStyle('#fff')
-		ctx.fillRect(5, 5, this.data.canvasWidth-10, 500-10)
+		ctx.fillRect(5, 5, this.data.canvasWidth-10, this.data.canvasHeight-10)
 		// logo
-		ctx.drawImage(this.data.logo, (this.data.canvasWidth-100)/2, 20, 100, 37)
-		// logo下线条
+		// ctx.drawImage(this.data.logo, (this.data.canvasWidth-100)/2, 20, 100, 37)
+		// 年份
+		ctx.setFontSize(20)
+		ctx.setFillStyle("#333")
+		ctx.fillText('- 2 0 1 9 -', (this.data.canvasWidth - ctx.measureText('- 2 0 1 9 -').width)/2, 35)
+		// 头部标题
+		ctx.setFontSize(14)
+		ctx.setFillStyle("#333")
+		ctx.fillText('我的FLAG清单', (this.data.canvasWidth - ctx.measureText('我的FLAG清单').width)/2, 55)
+		// 头部标题下线条
 		ctx.setStrokeStyle("#000")
 		ctx.setLineWidth(0.3)
-		ctx.moveTo(20, 77)
-		ctx.lineTo(this.data.canvasWidth-20, 77)
+		ctx.moveTo(20, 70)
+		ctx.lineTo(this.data.canvasWidth-20, 70)
 		ctx.stroke()
+		// 小程序码上线条
+		ctx.setStrokeStyle("#000")
+		ctx.setLineWidth(0.3)
+		ctx.moveTo(20, this.data.canvasHeight-100)
+		ctx.lineTo(this.data.canvasWidth-20, this.data.canvasHeight-100)
+		ctx.stroke()
+
 		// // 二维码文字
 		// ctx.setFontSize(10)
 		// ctx.setFillStyle("#666666")

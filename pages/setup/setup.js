@@ -111,11 +111,18 @@ Page({
 
   // 下一步
   nextStep() {
-    app.globalData.myFlagArr = this.data.myFlagArr;
-    console.log(this.data.myFlagArr)
-    wx.navigateTo({
-      url: '/pages/share/share'
-    })
+    if(this.data.myFlagArr.length > 0) {
+      app.globalData.myFlagArr = this.data.myFlagArr;
+      console.log(this.data.myFlagArr)
+      wx.navigateTo({
+        url: '/pages/share/share'
+      })
+    }else {
+      wx.showToast({
+        title: '至少1个flag',
+        icon: 'none'
+      })
+    }
   },
 
 })
