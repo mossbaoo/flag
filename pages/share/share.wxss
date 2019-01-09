@@ -1,0 +1,29 @@
+/**
+ * Page: 分享
+ * Author: Moss
+*/
+.container .canvas {
+  padding-top: 150rpx;
+}
+.container .canvas canvas {
+  background: #fff;
+  border-radius: 10rpx;
+  margin: 20rpx auto;
+  box-shadow: 0 6rpx 6rpx rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+.container .bottom {
+  display: flex;
+  justify-content: center;
+  padding: 40rpx 0;
+}
+.container .bottom .button button {
+  width: 180rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 0;
+  border-radius: 60rpx;
+  font-size: 26rpx;
+  border: 1px solid #333;
+  color: #333;
+}

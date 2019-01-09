@@ -4,10 +4,10 @@
 -->
 
 <view class="container">
-  <view class="content">
-    <canvas canvas-id="canvas"></canvas>
-    <view class="bottom">
-      <view class="button"><button bindtap="saveImage">保存图片</button></view>
-    </view>
+  <view class="canvas">
+    <canvas canvas-id="canvas" style="width: {{canvasWidth}}px; height: {{canvasHeight}}px;"></canvas>
+  </view>
+  <view class="bottom">
+    <view class="button"><button bindtap="saveImage">保存图片</button></view>
   </view>
 </view>

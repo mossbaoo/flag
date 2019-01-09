@@ -7,21 +7,61 @@ const app = getApp();
 
 Page({
 	data: {
-		host: app.globalData.host,
-		detailData: {},
-		logo: '/images/logo.jpg',
+		logo: '/images/logo2.png',
 		goodsImage: null,
-		title: '',
-		text: '',
-		price: '',
 		code: '/images/code.jpg',
 		myFlagArr: [],
+		canvasWidth: 0,
+		canvasHeight: 500
 	},
 
 	onLoad() {
+		let that = this;
 		this.setData({
 			myFlagArr: app.globalData.myFlagArr
 		})
+
+		// 获取系统信息
+		wx.getSystemInfo({
+			success(res) {
+				that.setData({
+					canvasWidth: res.windowWidth-50
+				})
+			}
+		})
+
+		this.drawCanvas();
+	},
+
+	// 描绘画布
+	drawCanvas() {
+		var ctx = wx.createCanvasContext('canvas')
+		// 设置背景
+		ctx.setFillStyle('#333')
+		ctx.fillRect(0, 0, this.data.canvasWidth, 500)
+		ctx.setFillStyle('#fff')
+		ctx.fillRect(5, 5, this.data.canvasWidth-10, 500-10)
+		// logo
+		ctx.drawImage(this.data.logo, (this.data.canvasWidth-100)/2, 20, 100, 37)
+		// logo下线条
+		ctx.setStrokeStyle("#000")
+		ctx.setLineWidth(0.3)
+		ctx.moveTo(20, 77)
+		ctx.lineTo(this.data.canvasWidth-20, 77)
+		ctx.stroke()
+		// // 二维码文字
+		// ctx.setFontSize(10)
+		// ctx.setFillStyle("#666666")
+		// ctx.fillText('扫描或长按二维码', 210, 361);
+
+		ctx.setFontSize(16)
+		ctx.setFillStyle("#333")
+		for(var i=0; i<this.data.myFlagArr.length; i++) {
+			ctx.fillText(i+1+'” '+this.data.myFlagArr[i], 20, 110+i*40);
+		}
+
+		// 完成
+    ctx.draw()
 	},
 
 	// 生成图片并保存到本地
@@ -41,92 +81,6 @@ Page({
 				})
 			}
 		})
-	},
-
-	getCanvas() {
-		var ctx = wx.createCanvasContext('canvas')
-		// 设置背景
-		ctx.setFillStyle('#ffffff')
-		ctx.fillRect(0, 0, 300, 470)
-		// logo
-		ctx.drawImage(this.data.logo, 100, 9, 100, 33)
-		// logo下线条
-		ctx.setStrokeStyle("rgba(0,0,0,.1)")
-		ctx.setLineWidth(0.3)
-		ctx.moveTo(0, 49)
-		ctx.lineTo(300, 49)
-		ctx.stroke()
-		// 商品图片
-		// ctx.drawImage(this.data.goodsImage, 0, 180, 750, 500, 10, 58, 280, 165)
-		ctx.drawImage(this.data.goodsImage, 10, 58, 280, 280)
-		// 商品名称
-		ctx.setFontSize(15)
-		ctx.setFillStyle("#333333")
-		textHandle(this.data.detailData.title, 10, 363, 170, 18);
-		// 商品介绍
-		ctx.setFontSize(12)
-		ctx.setFillStyle("#666666")
-		textHandle(this.data.detailData.introduction, 10, 405, 170, 15);
-		// 商品价格
-		ctx.setFontSize(18)
-		ctx.setFillStyle("#F62B19")
-		ctx.fillText('¥'+this.data.detailData.price, 12, 450);
-		// 二维码文字
-		ctx.setFontSize(10)
-		ctx.setFillStyle("#666666")
-		ctx.fillText('扫描或长按二维码', 210, 361);
-		// 二维码图片
-		ctx.drawImage(this.data.code, 210, 373, 80, 80);
-
-		/**
-		 * @function textHandle 绘制文本的换行处理
-		 * @param {String} text 在画布上输出的文本
-		 * @param {Number} numX 绘制文本的左上角x坐标位置
-		 * @param {Number} numY 绘制文本的左上角y坐标位置
-		 * @param {Number} textWidth 文本宽度
-		 * @param {Number} lineHeight 文本的行高
-		 * @author Moss(827291427@qq.com)
-		 */
-		function textHandle(text, numX, numY, textWidth, lineHeight) {
-			var chr = text.split(""); // 将一个字符串分割成字符串数组
-			var temp = "";
-			var row = [];
-			for (var a = 0; a < chr.length; a++) {
-				if (ctx.measureText(temp).width < textWidth) {
-					temp += chr[a];
-				}else {
-					a--; // 添加a--，防止字符丢失
-					row.push(temp);
-					temp = "";
-				}
-			}
-			row.push(temp);
-
-			// 如果数组长度大于2 则截取前两个
-			if (row.length > 2) {
-				var rowCut = row.slice(0, 2);
-				var rowPart = rowCut[1];
-				var test = "";
-				var empty = [];
-				for (var a = 0; a < rowPart.length; a++) {
-					if (ctx.measureText(test).width < textWidth-10) {
-						test += rowPart[a];
-					}else {
-						break;
-					}
-				}
-				empty.push(test);
-				var group = empty[0] + "..."; // 这里只显示两行，超出的用...展示
-				rowCut.splice(1, 1, group);
-				row = rowCut;
-			}
-			for (var b = 0; b < row.length; b++) {
-				ctx.fillText(row[b], numX, numY + b * lineHeight);
-			}
-		}
-
-		// 完成
-    ctx.draw()
 	},
 
 	// 分享
