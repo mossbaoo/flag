@@ -27,3 +27,54 @@
   border: 1px solid #333;
   color: #333;
 }
+.container .colorPicker {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+}
+.container .colorPicker .level1 {
+  width: 100%;
+  white-space: nowrap;
+  padding-bottom: 30rpx;
+}
+.container .colorPicker .level1 scroll-view {
+  display: inline-block;
+  width: 100%;
+}
+.container .colorPicker .level1 scroll-view .item {
+  width: 60rpx;
+  height: 60rpx;
+  margin-left: 50rpx;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+}
+.container .colorPicker .level1 scroll-view .item:last-child {
+  margin-right: 50rpx;
+}
+.container .colorPicker .level1 scroll-view .item text {
+  position: absolute;
+  top: 15rpx;
+  left: 15rpx;
+  font-size: 30rpx;
+  color: #fff;
+}
+.container .colorPicker .level2 {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30rpx;
+}
+.container .colorPicker .level2 .item {
+  width: 60rpx;
+  height: 40rpx;
+  position: relative;
+}
+.container .colorPicker .level2 .item text {
+  position: absolute;
+  top: 5rpx;
+  left: 15rpx;
+  font-size: 30rpx;
+  color: #fff;
+}

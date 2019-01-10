@@ -31,4 +31,55 @@
       }
     }
   }
+  .colorPicker {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    .level1 {
+      width: 100%;
+      white-space: nowrap;
+      padding-bottom: 30rpx;
+      scroll-view {
+        display: inline-block;
+        width: 100%;
+        .item {
+          width: 60rpx;
+          height: 60rpx;
+          margin-left: 50rpx;
+          display: inline-block;
+          overflow: hidden;
+          position: relative;
+          &:last-child {
+            margin-right: 50rpx;
+          }
+          text {
+            position: absolute;
+            top: 15rpx;
+            left: 15rpx;
+            font-size: 30rpx;
+            color: #fff;
+          }
+        }
+      }
+    }
+    .level2 {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 30rpx;
+      .item {
+        width: 60rpx;
+        height: 40rpx;
+        position: relative;
+        text {
+          position: absolute;
+          top: 5rpx;
+          left: 15rpx;
+          font-size: 30rpx;
+          color: #fff;
+        }
+      }
+    }
+  }
 }

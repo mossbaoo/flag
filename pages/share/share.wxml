@@ -10,4 +10,18 @@
   <view class="bottom">
     <view class="button"><button bindtap="saveImage">保存图片</button></view>
   </view>
+  <div class="colorPicker">
+    <div class="level1">
+      <scroll-view scroll-x="true">
+        <block wx:for="{{colorArr}}" wx:for-item="item" wx:for-index="index">
+          <div class="item" data-color="{{item.level1}}" data-level="1" data-index="{{index}}" bindtap="colorPicker" style="background: {{item.level1}}"><text class="iconfont icon-circle" wx:if="{{item.level1==colorValue}}"></text></div>
+        </block>
+      </scroll-view>
+    </div>
+    <div class="level2">
+      <block wx:for="{{colorArr[colorLevel1Index].level2}}" wx:for-item="item" wx:for-index="index">
+        <div class="item" data-color="{{item}}" data-level="2" bindtap="colorPicker" style="background: {{item}}"><text class="iconfont icon-circle" wx:if="{{item==colorValue}}"></text></div>
+      </block>
+    </div>
+  </div>
 </view>
