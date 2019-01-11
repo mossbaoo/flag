@@ -2,6 +2,9 @@
  * Page: 分享
  * Author: Moss
 */
+.container {
+  padding-bottom: 300rpx;
+}
 .container .canvas {
   padding-top: 150rpx;
 }
@@ -27,23 +30,54 @@
   border: 1px solid #333;
   color: #333;
 }
+.container .pickerMenu {
+  position: fixed;
+  left: 0;
+  bottom: 220rpx;
+  z-index: 999;
+  width: 100%;
+  background: #fff;
+}
+.container .pickerMenu .menu {
+  display: flex;
+}
+.container .pickerMenu .menu .item {
+  flex: 1;
+  line-height: 80rpx;
+  text-align: center;
+}
+.container .pickerMenu .menu .item.on {
+  color: #ff9900;
+}
+.container .pickerMenu .menu .line {
+  flex: 0 0 2rpx;
+  height: 50rpx;
+  margin-top: 15rpx;
+  background: #eee;
+}
+.container .pickerMenu .border {
+  height: 2rpx;
+  background: #eee;
+}
 .container .colorPicker {
   position: fixed;
   left: 0;
   bottom: 0;
+  z-index: 999;
   width: 100%;
   background: #fff;
+  height: 220rpx;
 }
 .container .colorPicker .level1 {
   width: 100%;
-  white-space: nowrap;
+  padding-top: 40rpx;
   padding-bottom: 30rpx;
 }
-.container .colorPicker .level1 scroll-view {
-  display: inline-block;
+.container .colorPicker .level1 .list {
   width: 100%;
+  overflow-x: scroll;
 }
-.container .colorPicker .level1 scroll-view .item {
+.container .colorPicker .level1 .list .item {
   width: 60rpx;
   height: 60rpx;
   margin-left: 50rpx;
@@ -51,15 +85,17 @@
   overflow: hidden;
   position: relative;
 }
-.container .colorPicker .level1 scroll-view .item:last-child {
+.container .colorPicker .level1 .list .item:last-child {
   margin-right: 50rpx;
 }
-.container .colorPicker .level1 scroll-view .item text {
+.container .colorPicker .level1 .list .item .check {
   position: absolute;
-  top: 15rpx;
-  left: 15rpx;
-  font-size: 30rpx;
-  color: #fff;
+  top: 16rpx;
+  left: 16rpx;
+  z-index: 99;
+  width: 30rpx;
+  height: 30rpx;
+  display: block;
 }
 .container .colorPicker .level2 {
   display: flex;
@@ -71,10 +107,38 @@
   height: 40rpx;
   position: relative;
 }
-.container .colorPicker .level2 .item text {
+.container .colorPicker .level2 .item .check {
   position: absolute;
-  top: 5rpx;
-  left: 15rpx;
-  font-size: 30rpx;
-  color: #fff;
+  top: 6rpx;
+  left: 16rpx;
+  z-index: 99;
+  width: 30rpx;
+  height: 30rpx;
+  display: block;
+}
+.container .decoratePicker {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 999;
+  width: 100%;
+  background: #fff;
+  height: 220rpx;
+}
+.container .decoratePicker .list {
+  width: 100%;
+  overflow-x: scroll;
+  padding-top: 40rpx;
+}
+.container .decoratePicker .list .item {
+  width: 220rpx;
+  margin-left: 50rpx;
+  display: inline-block;
+}
+.container .decoratePicker .list .item:last-child {
+  margin-right: 50rpx;
+}
+.container .decoratePicker .list .item .img {
+  width: 220rpx;
+  display: block;
 }

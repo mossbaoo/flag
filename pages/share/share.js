@@ -38,13 +38,15 @@ Page({
 		}],
 		colorLevel1Index: 0,
 		colorValue: '#000',
+		setType: 1,
+		decorate: 1,
 	},
 
 	onLoad() {
 		let that = this;
 		this.setData({
 			myFlagArr: app.globalData.myFlagArr,
-			canvasHeight: app.globalData.myFlagArr.length*40+110+120
+			canvasHeight: app.globalData.myFlagArr.length*40+230+130
 		})
 
 		// 获取系统信息
@@ -57,73 +59,76 @@ Page({
 		})
 
 		this.drawCanvas();
-
-		console.log(app.globalData.userInfo)
 	},
 
 	// 描绘画布
-	drawCanvas(color = this.data.colorArr[0].level1) {
+	drawCanvas(color=this.data.colorArr[0].level1, decorate=this.data.decorate) {
 		var ctx = wx.createCanvasContext('canvas')
 		// 设置背景
 		ctx.setFillStyle(color)
 		ctx.fillRect(0, 0, this.data.canvasWidth, this.data.canvasHeight)
 		ctx.setFillStyle('#fff')
 		ctx.fillRect(5, 5, this.data.canvasWidth-10, this.data.canvasHeight-10)
-		// logo
-		// ctx.drawImage(this.data.logo, (this.data.canvasWidth-100)/2, 20, 100, 37)
 		// 年份
+		ctx.setFontSize(30)
+		ctx.setFillStyle("#333")
+		ctx.fillText('· 2 0 1 9 ·', (this.data.canvasWidth - ctx.measureText('· 2 0 1 9 ·').width)/2, 55)
+		// 头部标题
 		ctx.setFontSize(20)
 		ctx.setFillStyle("#333")
-		ctx.fillText('- 2 0 1 9 -', (this.data.canvasWidth - ctx.measureText('- 2 0 1 9 -').width)/2, 55)
-		// 头部标题
-		ctx.setFontSize(14)
-		ctx.setFillStyle("#333")
-		ctx.fillText('我的FLAG清单', (this.data.canvasWidth - ctx.measureText('我的FLAG清单').width)/2, 75)
+		ctx.fillText('我的FLAG清单', (this.data.canvasWidth - ctx.measureText('我的FLAG清单').width)/2, 85)
+		// 装饰图
+		ctx.drawImage('/images/decorate_img'+decorate+'.png', (this.data.canvasWidth-150)/2, 95, 150, 96)
 		
 		// 头部线条
-		ctx.setStrokeStyle("#000")
-		ctx.setLineWidth(0.3)
-		ctx.moveTo(20, 100)
-		ctx.lineTo(this.data.canvasWidth-20, 100)
-		ctx.stroke()
+		// ctx.setStrokeStyle("#000")
+		// ctx.setLineWidth(0.3)
+		// ctx.moveTo(20, 200)
+		// ctx.lineTo(this.data.canvasWidth-20, 200)
+		// ctx.stroke()
+		ctx.drawImage('/images/line_top.png', 30, 200, this.data.canvasWidth-60, (this.data.canvasWidth-60)/500*10)
 
 		// 底部线条
-		ctx.setStrokeStyle("#000")
-		ctx.setLineWidth(0.3)
-		ctx.moveTo(20, this.data.canvasHeight-120)
-		ctx.lineTo(this.data.canvasWidth-20, this.data.canvasHeight-120)
-		ctx.stroke()
+		// ctx.setStrokeStyle("#000")
+		// ctx.setLineWidth(0.3)
+		// ctx.moveTo(20, this.data.canvasHeight-120)
+		// ctx.lineTo(this.data.canvasWidth-20, this.data.canvasHeight-120)
+		// ctx.stroke()
+		ctx.drawImage('/images/line_bottom.png', 30, this.data.canvasHeight-130, this.data.canvasWidth-60, (this.data.canvasWidth-60)/500*10)
 
 		// 用户信息
-		ctx.setFontSize(12)
+		ctx.setFontSize(14)
 		ctx.setFillStyle("#333")
-		ctx.fillText('立FLAG人：'+app.globalData.userInfo.nickName, 20, this.data.canvasHeight-80);
-
-		// 时间
-		let date = util.formatTime(new Date());
-		console.log(date)
-		ctx.setFontSize(12)
-		ctx.setFillStyle("#333")
-		ctx.fillText('立于 '+date, 20, this.data.canvasHeight-60);
+		ctx.fillText('我是 '+app.globalData.userInfo.nickName, 35, this.data.canvasHeight-80);
+		ctx.fillText('于 '+util.formatTime(new Date()), 35, this.data.canvasHeight-55);
+		ctx.fillText('在此立了个flag', 35, this.data.canvasHeight-30);
 
 		// 小程序码
-		ctx.drawImage(this.data.code, this.data.canvasWidth-95, this.data.canvasHeight-112, 70, 70)
+		ctx.drawImage(this.data.code, this.data.canvasWidth-105, this.data.canvasHeight-112, 70, 70)
 
 		// 小程序码文字
-		ctx.setFontSize(10)
+		ctx.setFontSize(12)
 		ctx.setFillStyle("#333")
-		ctx.fillText('扫描或长按二维码', this.data.canvasWidth-100, this.data.canvasHeight-28);
-		ctx.fillText('来一起立个flag吧', this.data.canvasWidth-98, this.data.canvasHeight-15);
+		ctx.fillText('扫码立个flag', this.data.canvasWidth-103, this.data.canvasHeight-25);
 
 		// 列表
 		ctx.setFontSize(16)
 		ctx.setFillStyle("#333")
 		for(var i=0; i<this.data.myFlagArr.length; i++) {
-			ctx.fillText(i+1+'” '+this.data.myFlagArr[i], 20, 132+i*40);
+			ctx.fillText(i+1+'” '+this.data.myFlagArr[i], 35, 245+i*40);
 		}
 
 		// 完成
     ctx.draw()
+	},
+
+	// 切换设置类型
+	switchSetType(e) {
+		if(e.currentTarget.dataset.id != this.data.setType) {
+			this.setData({
+				setType: e.currentTarget.dataset.id
+			})
+		}
 	},
 
 	// 选择颜色
@@ -139,6 +144,16 @@ Page({
 		this.drawCanvas(e.currentTarget.dataset.color);
 	},
 
+	// 选择装饰图
+	decoratePicker(e) {
+		if(e.currentTarget.dataset.id != this.data.decorate) {
+			this.setData({
+				decorate: e.currentTarget.dataset.id
+			})
+			this.drawCanvas(this.data.colorValue, e.currentTarget.dataset.id);
+		}
+	},
+
 	// 生成图片并保存到本地
 	saveImage() {
 		wx.canvasToTempFilePath({
@@ -149,7 +164,7 @@ Page({
 					filePath: res.tempFilePath,
 					success(res) {
 						wx.showToast({
-							title: '保存成功',
+							title: '保存成功，快去发个朋友圈吧',
 							icon: 'success'
 						})
 					}

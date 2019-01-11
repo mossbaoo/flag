@@ -10,18 +10,34 @@
   <view class="bottom">
     <view class="button"><button bindtap="saveImage">保存图片</button></view>
   </view>
-  <div class="colorPicker">
-    <div class="level1">
-      <scroll-view scroll-x="true">
+  <cover-view class="pickerMenu">
+    <cover-view class="border"></cover-view>
+    <cover-view class="menu">
+      <cover-view class="item {{setType==1? 'on':''}}" data-id="1" bindtap="switchSetType">颜色</cover-view>
+      <cover-view class="line"></cover-view>
+      <cover-view class="item {{setType==2? 'on':''}}" data-id="2" bindtap="switchSetType">小装饰</cover-view>
+    </cover-view>
+    <cover-view class="border"></cover-view>
+  </cover-view>
+  <cover-view class="colorPicker" wx:if="{{setType==1}}">
+    <cover-view class="level1">
+      <cover-view class="list">
         <block wx:for="{{colorArr}}" wx:for-item="item" wx:for-index="index">
-          <div class="item" data-color="{{item.level1}}" data-level="1" data-index="{{index}}" bindtap="colorPicker" style="background: {{item.level1}}"><text class="iconfont icon-circle" wx:if="{{item.level1==colorValue}}"></text></div>
+          <cover-view class="item" data-color="{{item.level1}}" data-level="1" data-index="{{index}}" bindtap="colorPicker" style="background: {{item.level1}}"><cover-image src="/images/circle.png" class="check" wx:if="{{item.level1==colorValue}}"></cover-image></cover-view>
         </block>
-      </scroll-view>
-    </div>
-    <div class="level2">
+      </cover-view>
+    </cover-view>
+    <cover-view class="level2">
       <block wx:for="{{colorArr[colorLevel1Index].level2}}" wx:for-item="item" wx:for-index="index">
-        <div class="item" data-color="{{item}}" data-level="2" bindtap="colorPicker" style="background: {{item}}"><text class="iconfont icon-circle" wx:if="{{item==colorValue}}"></text></div>
+        <cover-view class="item" data-color="{{item}}" data-level="2" bindtap="colorPicker" style="background: {{item}}"><cover-image src="/images/circle.png" class="check" wx:if="{{item==colorValue}}"></cover-image></cover-view>
       </block>
-    </div>
-  </div>
+    </cover-view>
+  </cover-view>
+  <cover-view class="decoratePicker" wx:if="{{setType==2}}">
+    <cover-view class="list">
+      <block wx:for="{{[1,2,3,4,5,6,7,8,9,10]}}" wx:for-item="item" wx:for-index="index">
+        <cover-view class="item" data-id="{{item}}" bindtap="decoratePicker"><cover-image src="/images/decorate_img{{item}}.png" class="img" mode="widthFix"></cover-image></cover-view>
+      </block>
+    </cover-view>
+  </cover-view>
 </view>
