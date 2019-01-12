@@ -1,5 +1,5 @@
 /**
- * Page: 分享
+ * Page: canvas
  * Author: Moss
  */
 
@@ -164,7 +164,7 @@ Page({
 					filePath: res.tempFilePath,
 					success(res) {
 						wx.showToast({
-							title: '保存成功，快去发个朋友圈吧',
+							title: '保存成功',
 							icon: 'success'
 						})
 					}
@@ -176,15 +176,15 @@ Page({
 	// 分享
 	onShareAppMessage(res) {
     return {
-      title: this.data.detailData.title,
-			path: '/pages/store/store?goodsid='+this.data.id+'&uid='+app.globalData.userId,
-			imageUrl: this.data.host+this.data.detailData.image,
-			success: (res) => {
+      title: '我在这里立了个flag，你也快来吧',
+			path: '/pages/index/index',
+			imageUrl: '/images/img1.jpg',
+			success: res=> {
         wx.showToast({
 					title: '转发成功'
 				})
       },
-      fail: (res) => {
+      fail: res=> {
         wx.showToast({
 					title: '转发失败',
 					icon: 'none'

@@ -1,5 +1,5 @@
 /**
- * Page: 分享
+ * Page: canvas
  * Author: Moss
 */
 .container {
@@ -18,17 +18,26 @@
 .container .bottom {
   display: flex;
   justify-content: center;
-  padding: 40rpx 0;
+  padding: 50rpx 0;
 }
-.container .bottom .button button {
-  width: 180rpx;
-  height: 60rpx;
-  line-height: 60rpx;
+.container .bottom button {
+  width: 200rpx;
+  height: 70rpx;
+  line-height: 70rpx;
   padding: 0;
-  border-radius: 60rpx;
+  border-radius: 70rpx;
   font-size: 26rpx;
-  border: 1px solid #333;
-  color: #333;
+  margin: 0 20rpx;
+}
+.container .bottom button:nth-child(1) {
+  background: none;
+  border: 1px solid #ff6600;
+  color: #ff6600;
+}
+.container .bottom button:nth-child(2) {
+  background: #ff6600;
+  border: 1px solid #ff6600;
+  color: #fff;
 }
 .container .pickerMenu {
   position: fixed;
@@ -47,7 +56,7 @@
   text-align: center;
 }
 .container .pickerMenu .menu .item.on {
-  color: #ff9900;
+  color: #ff6600;
 }
 .container .pickerMenu .menu .line {
   flex: 0 0 2rpx;

@@ -6,7 +6,8 @@
 .container {
   padding: 0 30rpx;
   .myFlag {
-    padding-top: 70rpx;
+    padding-top: 80rpx;
+    padding-left: 10rpx;
     .top {
       display: flex;
       align-items: center;
@@ -36,6 +37,51 @@
       }
     }
   }
+  .myFlagList {
+    position: fixed;
+    top: 180rpx;
+    left: 50rpx;
+    z-index: 99;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    padding: 10rpx 30rpx;
+    box-sizing: border-box;
+    border: 1px solid #000;
+    border-radius: 10rpx;
+    background: #fff;
+    opacity: 0;
+    transition: all 0.5s;
+    &.on {
+      width: 650rpx;
+      height: 700rpx;
+      opacity: 1;
+    }
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 90rpx;
+      .title {
+        font-size: 32rpx;
+      }
+      .close text {
+        font-size: 40rpx;
+      }
+    }
+    .item {
+      font-size: 30rpx;
+      color: #333;
+      height: 64rpx;
+      display: flex;
+      align-items: center;
+      text {
+        font-size: 34rpx;
+        color: #ff6600;
+        padding-right: 5rpx;
+      }
+    }
+  }
   .select {
     padding: 100rpx 40rpx 0;
     display: flex;
@@ -51,8 +97,8 @@
         display: flex;
         line-height: 35rpx;
         text {
-          font-size: 30rpx;
-          color: #CC6633;
+          font-size: 34rpx;
+          color: #ff6600;
           padding-right: 5rpx;
         }
       }

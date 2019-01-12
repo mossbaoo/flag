@@ -1,5 +1,5 @@
 /**
- * Page: 分享
+ * Page: canvas
  * Author: Moss
 */
 
@@ -18,17 +18,24 @@
   .bottom {
     display: flex;
     justify-content: center;
-    padding: 40rpx 0;
-    .button {
-      button {
-        width: 180rpx;
-        height: 60rpx;
-        line-height: 60rpx;
-        padding: 0;
-        border-radius: 60rpx;
-        font-size: 26rpx;
-        border: 1px solid #333;
-        color: #333;
+    padding: 50rpx 0;
+    button {
+      width: 200rpx;
+      height: 70rpx;
+      line-height: 70rpx;
+      padding: 0;
+      border-radius: 70rpx;
+      font-size: 26rpx;
+      margin: 0 20rpx;
+      &:nth-child(1) {
+        background: none;
+        border: 1px solid #ff6600;
+        color: #ff6600;
+      }
+      &:nth-child(2) {
+        background: #ff6600;
+        border: 1px solid #ff6600;
+        color: #fff;
       }
     }
   }
@@ -46,7 +53,7 @@
         line-height: 80rpx;
         text-align: center;
         &.on {
-          color: #ff9900;
+          color: #ff6600;
         }
       }
       .line {

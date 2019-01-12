@@ -4,9 +4,18 @@
 -->
 
 <view class="container">
-  <view class="myFlag">
+  <view class="myFlag" bindtap="switchMyFlag">
     <view class="top"><view><text class="iconfont icon-qizi"></text>{{myFlagArr.length}}/9</view></view>
     <view class="bottom"><view>Flag<text class="iconfont icon-xiala"></text></view></view>
+  </view>
+  <view class="myFlagList {{isMyFlag? 'on':''}}" >
+    <view class="top">
+      <view class="title">我的Flag</view>
+      <view class="close" bindtap="switchMyFlag"><text class="iconfont icon-close"></text></view>
+    </view>
+    <block wx:for="{{myFlagArr}}" wx:for-index="index" wx:for-item="item">
+      <view class="item" data-index="{{index}}" catchtouchstart="draggleTouch" catchtouchmove="draggleTouch" catchtouchend="draggleTouch"><text class="iconfont icon-check"></text>{{item}}</view>
+    </block>
   </view>
   <view class="select">
     <block wx:for="{{showFlagArr}}" wx:for-index="index" wx:for-item="item">

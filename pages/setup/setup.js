@@ -30,10 +30,22 @@ Page({
     showFlagArr: [],
     myFlagArr: [],
     flagInputValue: '',
+    isMyFlag: false,
+    offsetTop: 0, // 外边框距离顶部
+    touchItemInfo: {}
   },
 
   onLoad() {
-    this.showFlag()
+    let that = this;
+    this.showFlag();
+
+    let query = wx.createSelectorQuery();
+    query.select('.myFlagList').boundingClientRect(rect=>{
+      that.setData({
+        offsetTop: rect.top
+      })
+    }).exec();
+
   },
 
   // 展示随机flag
@@ -115,7 +127,7 @@ Page({
       app.globalData.myFlagArr = this.data.myFlagArr;
       console.log(this.data.myFlagArr)
       wx.navigateTo({
-        url: '/pages/share/share'
+        url: '/pages/canvas/canvas'
       })
     }else {
       wx.showToast({
@@ -124,5 +136,76 @@ Page({
       })
     }
   },
+
+  // 打开/关闭 我的flag
+  switchMyFlag() {
+    this.setData({
+      isMyFlag: !this.data.isMyFlag
+    })
+  },
+
+  draggleTouch(e) {
+    var touchType = e.type;
+    switch(touchType){
+      case "touchstart":
+        this.touchStart(e);
+        break;
+      case "touchmove":
+        this.touchMove(e);
+        break;
+      case "touchend":
+        this.touchEnd(e);
+        break;
+    }
+  },
+
+  touchStart(e) {
+    console.log(e)
+    let touchItemInfo = {
+      index: e.currentTarget.dataset.index,
+      y: e.changedTouches[0].pageY,
+    }
+    this.setData({
+      touchItemInfo: touchItemInfo
+    })
+  },
+
+  touchMove(e) {
+    let myFlagArr = this.data.myFlagArr;
+    if(e.changedTouches[0].pageY>200) {
+      console.log(this.data.touchItemInfo.index)
+      console.log(this.data.myFlagArr[this.data.touchItemInfo.index])
+      myFlagArr.splice(this.data.touchItemInfo.index, 1)
+      myFlagArr.splice(this.data.myFlagArr.length-1, 0, this.data.myFlagArr[this.data.touchItemInfo.index])
+      this.setData({
+        myFlagArr: myFlagArr
+      })
+    }
+    
+  },
+
+  touchEnd(e) {
+    
+  },
+
+  // 分享
+	onShareAppMessage(res) {
+    return {
+      title: '我在这里立了个flag，你也快来吧',
+			path: '/pages/index/index',
+			imageUrl: '/images/img1.jpg',
+			success: res=> {
+        wx.showToast({
+					title: '转发成功'
+				})
+      },
+      fail: res=> {
+        wx.showToast({
+					title: '转发失败',
+					icon: 'none'
+				})
+      }
+    }
+	}
 
 })

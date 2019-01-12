@@ -56,4 +56,24 @@ Page({
     })
   },
 
+  // 分享
+	onShareAppMessage(res) {
+    return {
+      title: '我在这里立了个flag，你也快来吧',
+			path: '/pages/index/index',
+			imageUrl: '/images/img1.jpg',
+			success: res=> {
+        wx.showToast({
+					title: '转发成功'
+				})
+      },
+      fail: res=> {
+        wx.showToast({
+					title: '转发失败',
+					icon: 'none'
+				})
+      }
+    }
+	}
+
 })

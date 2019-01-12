@@ -1,5 +1,5 @@
 <!-- 
-  Page: 分享
+  Page: canvas
   Author: Moss
 -->
 
@@ -8,7 +8,8 @@
     <canvas canvas-id="canvas" style="width: {{canvasWidth}}px; height: {{canvasHeight}}px;"></canvas>
   </view>
   <view class="bottom">
-    <view class="button"><button bindtap="saveImage">保存图片</button></view>
+    <button bindtap="saveImage">保存海报</button>
+    <button open-type="share">邀请好友来玩</button>
   </view>
   <cover-view class="pickerMenu">
     <cover-view class="border"></cover-view>
