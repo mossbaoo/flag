@@ -44,7 +44,9 @@ Page({
       that.setData({
         offsetTop: rect.top
       })
+      console.log(rect)
     }).exec();
+
 
   },
 
@@ -171,12 +173,13 @@ Page({
   },
 
   touchMove(e) {
-    let myFlagArr = this.data.myFlagArr;
-    if(e.changedTouches[0].pageY>200) {
-      console.log(this.data.touchItemInfo.index)
-      console.log(this.data.myFlagArr[this.data.touchItemInfo.index])
-      myFlagArr.splice(this.data.touchItemInfo.index, 1)
-      myFlagArr.splice(this.data.myFlagArr.length-1, 0, this.data.myFlagArr[this.data.touchItemInfo.index])
+    
+    
+    if(e.changedTouches[0].pageY>e.currentTarget.offsetTop+this.data.offsetTop+27) {
+      let myFlagArr = this.data.myFlagArr;
+      let index = this.data.touchItemInfo.index;
+      [myFlagArr[index], myFlagArr[index+1]]=[myFlagArr[index+1], myFlagArr[index]];
+      console.log(myFlagArr)
       this.setData({
         myFlagArr: myFlagArr
       })
