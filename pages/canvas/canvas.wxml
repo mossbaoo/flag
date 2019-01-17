@@ -9,14 +9,17 @@
   </view>
   <view class="bottom">
     <button bindtap="saveImage">保存海报</button>
-    <button open-type="share">邀请好友来玩</button>
+    <button open-type="share">邀请好友</button>
   </view>
-  <cover-view class="pickerMenu">
+  <cover-view class="pickerButton" data-id="1" bindtap="switchSetType">变个色 / 换个图</cover-view>
+  <cover-view class="pickerMenu" wx:if="{{setType!=0}}">
     <cover-view class="border"></cover-view>
     <cover-view class="menu">
       <cover-view class="item {{setType==1? 'on':''}}" data-id="1" bindtap="switchSetType">颜色</cover-view>
       <cover-view class="line"></cover-view>
       <cover-view class="item {{setType==2? 'on':''}}" data-id="2" bindtap="switchSetType">小装饰</cover-view>
+      <cover-view class="line"></cover-view>
+      <cover-view class="close" data-id="0" bindtap="switchSetType"><cover-image src="/images/close.png" mode="widthFix" class="icon"></cover-image></cover-view>
     </cover-view>
     <cover-view class="border"></cover-view>
   </cover-view>

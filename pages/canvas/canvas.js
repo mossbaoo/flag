@@ -38,7 +38,7 @@ Page({
 		}],
 		colorLevel1Index: 0,
 		colorValue: '#000',
-		setType: 1,
+		setType: 0,
 		decorate: 1,
 	},
 
