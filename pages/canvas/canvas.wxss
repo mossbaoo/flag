@@ -3,10 +3,7 @@
  * Author: Moss
 */
 .container {
-  padding-bottom: 80rpx;
-}
-.container .canvas {
-  padding-top: 150rpx;
+  padding: 30rpx 0 80rpx;
 }
 .container .canvas canvas {
   background: #fff;
@@ -45,7 +42,7 @@
   bottom: 0;
   z-index: 999;
   width: 100%;
-  background: #ff6600;
+  background: #333;
   text-align: center;
   line-height: 80rpx;
   font-size: 30rpx;

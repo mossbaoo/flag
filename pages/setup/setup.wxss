@@ -3,11 +3,7 @@
  * Author: Moss
  */
 .container {
-  padding: 0 30rpx;
-}
-.container .myFlag {
-  padding-top: 80rpx;
-  padding-left: 10rpx;
+  padding: 20rpx 30rpx 0;
 }
 .container .myFlag .top {
   display: flex;
@@ -143,7 +139,7 @@
   border-radius: 80rpx;
   border: 1px solid #333;
   padding: 0 5rpx 0 30rpx;
-  margin: 200rpx 40rpx 0;
+  margin: 160rpx 40rpx 0;
 }
 .container .input input {
   width: 400rpx;
