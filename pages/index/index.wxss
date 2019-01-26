@@ -2,10 +2,69 @@
  * Page: 首页
  * Author: Moss
  */
-.container {
+.container .topCollect {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  background: #333;
+  font-size: 30rpx;
+  color: #fff;
+  height: 0;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.container .topCollect.on {
+  height: 100rpx;
+}
+.container .topCollect .icon-more {
+  font-size: 44rpx;
+  padding: 0 10rpx;
+}
+.container .topCollect .icon-jiantou1 {
+  font-size: 50rpx;
+  padding-left: 10rpx;
+}
+.container .main {
+  display: flex;
+  justify-content: space-between;
+  padding: 30rpx;
+}
+.container .main .left {
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .main .left .head image {
+  width: 100rpx;
+  height: 100rpx;
+  display: block;
+  border-radius: 50%;
+}
+.container .main .left .name {
+  font-size: 30rpx;
+  color: #333;
+  padding-left: 20rpx;
+}
+.container .main .right {
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .main .right .item.share {
+  margin-left: 20rpx;
+}
+.container .main .right .item text {
+  display: block;
+  width: 60rpx;
+  height: 60rpx;
+  background: #333;
+  text-align: center;
+  line-height: 60rpx;
+  border-radius: 50%;
+  font-size: 34rpx;
+  color: #fff;
 }
 .container .title {
   font-size: 50rpx;

@@ -4,8 +4,25 @@
 -->
 
 <view class="container">
-  <view class="title">FLAG</view>
-  <view class="text">有目标，才有动力</view>
+  <view class="topCollect {{isCollect? 'on':''}}">
+    点击<text class="iconfont icon-more"></text>添加到我的小程序<text class="iconfont icon-jiantou1"></text>
+  </view>
+  <view class="main">
+    <view class="left">
+      <view class="head"><image src="{{userInfo.avatarUrl}}" mode="widthFix"></image></view>
+      <view class="name">早上好，{{userInfo.nickName}}</view>
+    </view>
+    <view class="right">
+      <view class="item collect">
+        <button bindtap="collect"><text class="iconfont icon-xingxing"></text></button>
+      </view>
+      <view class="item share">
+        <button open-type="share"><text class="iconfont icon-share"></text></button>
+      </view>
+    </view>
+  </view>
+  <!-- <view class="title">FLAG</view>
+  <view class="text">有目标，才有动力</view> -->                            
   <view class="button">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">立个flag</button>
     <button wx:else bindtap="toSetFlag">立个flag</button>

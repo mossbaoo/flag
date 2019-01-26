@@ -9,7 +9,8 @@ Page({
   data: {
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    isCollect: false
   },
 
   onLoad() {
@@ -39,6 +40,7 @@ Page({
         }
       })
     }
+    console.log(this.data.userInfo)
   },
 
   getUserInfo(e) {
@@ -47,6 +49,12 @@ Page({
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
+    })
+  },
+
+  collect() {
+    this.setData({
+      isCollect: !this.data.isCollect
     })
   },
 
