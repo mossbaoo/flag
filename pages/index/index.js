@@ -106,6 +106,13 @@ Page({
     }
   },
 
+  // 去个人中心
+  toPersonal() {
+    wx.navigateTo({
+      url: '/pages/personal/personal'
+    })
+  },
+
   collect() {
     this.setData({
       isCollect: !this.data.isCollect

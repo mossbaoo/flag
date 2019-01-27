@@ -77,19 +77,26 @@
       justify-content: center;
       align-items: center;
       .item {
-        &.share {
-          margin-left: 20rpx;
-        }
         text {
           display: block;
           width: 60rpx;
           height: 60rpx;
-          background: #333;
           text-align: center;
           line-height: 60rpx;
           border-radius: 50%;
           font-size: 34rpx;
           color: #fff;
+        }
+        &.collect {
+          text {
+            background: linear-gradient(#ff6600, #ff9933);
+          }
+        }
+        &.share {
+          margin-left: 20rpx;
+          text {
+            background: linear-gradient(#ff6600, #ff9933);
+          }
         }
       }
     }

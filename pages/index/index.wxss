@@ -74,19 +74,24 @@
   justify-content: center;
   align-items: center;
 }
-.container .main .right .item.share {
-  margin-left: 20rpx;
-}
 .container .main .right .item text {
   display: block;
   width: 60rpx;
   height: 60rpx;
-  background: #333;
   text-align: center;
   line-height: 60rpx;
   border-radius: 50%;
   font-size: 34rpx;
   color: #fff;
+}
+.container .main .right .item.collect text {
+  background: linear-gradient(#ff6600, #ff9933);
+}
+.container .main .right .item.share {
+  margin-left: 20rpx;
+}
+.container .main .right .item.share text {
+  background: linear-gradient(#ff6600, #ff9933);
 }
 .container .title {
   font-size: 50rpx;

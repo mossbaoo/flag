@@ -14,7 +14,7 @@
         <view class="name">立即登录</view>
       </button>
     </view>
-    <view class="user" wx:else>
+    <view class="user" wx:else bindtap="toPersonal">
       <view class="head"><image src="{{userInfo.avatarUrl}}" mode="widthFix"></image></view>
       <view class="name">{{timeName}}好，{{userInfo.nickName}}</view>
     </view>

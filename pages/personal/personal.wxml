@@ -1,0 +1,65 @@
+<!--
+  Page: 首页
+  Author: Moss
+-->
+
+<view class="container">
+  <view class="user {{scrollTop>0? 'on':''}}">
+    <view class="head"><image src="{{userInfo.avatarUrl}}" mode="widthFix"></image></view>
+    <view class="name">{{userInfo.nickName}}</view>
+  </view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+  <view>1</view>
+</view>

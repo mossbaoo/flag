@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/personal/personal",
     "pages/setup/setup",
     "pages/canvas/canvas"
   ],

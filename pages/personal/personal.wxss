@@ -1,0 +1,52 @@
+/**
+ * Page: 首页
+ * Author: Moss
+ */
+.container {
+  padding-top: 280rpx;
+  transition: all .5s;
+}
+.container.on {
+  padding-top: 120rpx;
+}
+.container .user {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#ff6600, #ff9933);
+  padding: 30rpx 30rpx 20rpx;
+  transition: all .5s;
+  box-sizing: border-box;
+}
+.container .user .head {
+  transition: all .3s;
+}
+.container .user .head image {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  display: block;
+  transition: all .1s;
+}
+.container .user .name {
+  font-size: 30rpx;
+  color: #333;
+  line-height: 80rpx;
+}
+.container .user.on {
+  justify-content: flex-start;
+  flex-direction: row;
+  padding: 20rpx 30rpx;
+}
+.container .user.on .head {
+  padding-right: 20rpx;
+}
+.container .user.on .head image {
+  width: 80rpx;
+  height: 80rpx;
+}
