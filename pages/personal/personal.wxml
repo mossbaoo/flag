@@ -8,58 +8,18 @@
     <view class="head"><image src="{{userInfo.avatarUrl}}" mode="widthFix"></image></view>
     <view class="name">{{userInfo.nickName}}</view>
   </view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
-  <view>1</view>
+  <view class="list">
+    <view class="item">
+      <button open-type="contact" hover-class="none">
+        <view class="left">联系客服</view>
+        <view class="right"><text class="iconfont icon-jinru"></text></view>
+      </button>
+    </view>
+    <view class="item">
+      <button open-type="share" hover-class="none">
+        <view class="left">分享给朋友</view>
+        <view class="right"><text class="iconfont icon-jinru"></text></view>
+      </button>
+    </view>
+  </view>
 </view>

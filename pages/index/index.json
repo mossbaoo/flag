@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "码了个宝"
+  "navigationBarTitleText": "码了个宝",
+  "usingComponents": {
+    "authLogin": "/components/authLogin/authLogin"
+  }
 }

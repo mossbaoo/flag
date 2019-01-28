@@ -4,26 +4,29 @@
 -->
 
 <view class="container">
+  <authLogin wx:if="{{!hasUserInfo}}" bind:getUserInfoEvent="getUserInfo"></authLogin>
   <view class="topCollect {{isCollect? 'on':''}}">
     点击<text class="iconfont icon-more"></text>添加到我的小程序<text class="iconfont icon-jiantou1"></text>
   </view>
   <view class="main">
-    <view class="login" wx:if="{{!hasUserInfo}}">
-      <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" hover-class="none">
-        <view class="head"><image src="/images/user.png" mode="widthFix"></image></view>
-        <view class="name">立即登录</view>
-      </button>
-    </view>
-    <view class="user" wx:else bindtap="toPersonal">
-      <view class="head"><image src="{{userInfo.avatarUrl}}" mode="widthFix"></image></view>
-      <view class="name">{{timeName}}好，{{userInfo.nickName}}</view>
-    </view>
-    <view class="right">
-      <view class="item collect">
-        <button bindtap="collect" hover-class="none"><text class="iconfont icon-xingxing"></text></button>
+    <view class="main_c">
+      <view class="login" wx:if="{{!hasUserInfo}}">
+        <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" hover-class="none">
+          <view class="head"><image src="/images/user.png" mode="widthFix"></image></view>
+          <view class="name">立即登录</view>
+        </button>
       </view>
-      <view class="item share">
-        <button open-type="share" hover-class="none"><text class="iconfont icon-share"></text></button>
+      <view class="user" wx:else bindtap="toPersonal">
+        <view class="head"><image src="{{userInfo.avatarUrl}}" mode="widthFix"></image></view>
+        <view class="name ellipsis">{{timeName}}好，{{userInfo.nickName}}</view>
+      </view>
+      <view class="right">
+        <view class="item collect">
+          <button bindtap="collect" hover-class="none"><text class="iconfont icon-xingxing"></text></button>
+        </view>
+        <view class="item share">
+          <button open-type="share" hover-class="none"><text class="iconfont icon-share"></text></button>
+        </view>
       </view>
     </view>
   </view>
@@ -31,12 +34,5 @@
   <view class="text">有目标，才有动力</view> -->                            
   <view class="button">
     <button bindtap="toSetFlag">立个flag</button>
-  </view>
-
-  <view class="login_mask" wx:if="{{!hasUserInfo}}"></view>
-  <view class="login_box" wx:if="{{!hasUserInfo}}">
-    <view class="logo"><image src="/images/logo.jpg" mode="widthFix"></image></view>
-    <view class="text">授权登录，体验更好的服务</view>
-    <view class="btn"><button open-type="getUserInfo" bindgetuserinfo="getUserInfo">授权登录</button></view>
   </view>
 </view>
