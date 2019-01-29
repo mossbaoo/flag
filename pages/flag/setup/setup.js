@@ -1,6 +1,6 @@
 
 const app = getApp();
-const util = require('../../utils/util.js')
+const util = require('../../../utils/util.js')
 
 Page({
   data: {
@@ -26,6 +26,9 @@ Page({
       {id: 19, name: '一定要多多运动', checked: false},
       {id: 20, name: '戒掉手游，再玩剁手', checked: false},
       {id: 21, name: '去看一场爱豆的现场演出', checked: false},
+      {id: 22, name: '蹦一次极', checked: false},
+      {id: 23, name: '和喜欢的人一起蹦极', checked: false},
+      {id: 24, name: '挑战长隆的所有项目', checked: false},
     ],
     showFlagArr: [],
     myFlagArr: [],
@@ -129,7 +132,7 @@ Page({
       app.globalData.myFlagArr = this.data.myFlagArr;
       console.log(this.data.myFlagArr)
       wx.navigateTo({
-        url: '/pages/canvas/canvas'
+        url: '/pages/flag/canvas/canvas'
       })
     }else {
       wx.showToast({

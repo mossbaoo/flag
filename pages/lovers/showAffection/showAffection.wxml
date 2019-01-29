@@ -1,0 +1,19 @@
+<!--
+  Page: 秀恩爱
+  Author: Moss
+-->
+
+<view class="container">
+  <view class="main">
+    <view class="item">
+      <view class="text">第一张</view>
+      <view class="img" bindtap="chooseImage_a">
+        <text class="iconfont icon-jia" wx:if="{{!image_a}}"></text>
+        <image src="{{image_a}}" mode="widthFix" wx:if="{{image_a}}"></image>
+      </view>
+    </view>
+  </view>
+  <view class="canvas">
+    <canvas canvas-id="canvas" style="width: 300px;"></canvas>
+  </view>
+</view>

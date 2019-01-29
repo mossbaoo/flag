@@ -2,8 +2,9 @@
   "pages":[
     "pages/index/index",
     "pages/personal/personal",
-    "pages/setup/setup",
-    "pages/canvas/canvas"
+    "pages/flag/setup/setup",
+    "pages/flag/canvas/canvas",
+    "pages/lovers/showAffection/showAffection"
   ],
   "window":{
     "backgroundTextStyle":"light",

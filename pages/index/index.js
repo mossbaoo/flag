@@ -105,7 +105,7 @@ Page({
 
   toSetFlag() {
     wx.navigateTo({
-      url: '/pages/setup/setup'
+      url: '/pages/flag/setup/setup'
     })
   },
 
