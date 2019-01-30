@@ -28,7 +28,7 @@
   }
   .main {
     background: linear-gradient(#333, #666);
-    // border-radius: 10rpx;
+    border-radius: 10rpx;
     margin: 30rpx 30rpx 0;
     padding: 5rpx;
   }
@@ -42,7 +42,7 @@
       height: 100rpx;
       display: flex;
       align-items: center;
-      width: 450rpx;
+      width: 440rpx;
       .head image {
         width: 100rpx;
         height: 100rpx;
@@ -98,41 +98,29 @@
         }
         &.collect {
           text {
-            background: linear-gradient(#ff6600, #ff9933);
+            background: linear-gradient(#ff9933, #ff6600);
           }
         }
         &.share {
-          margin-left: 20rpx;
+          margin-left: 30rpx;
           text {
-            background: linear-gradient(#ff6600, #ff9933);
+            background: linear-gradient(#ff9933, #ff6600);
           }
         }
       }
     }
   }
-  .title {
-    font-size: 50rpx;
-    color: #000;
-    line-height: 60rpx;
-    padding-top: 140rpx;
-    letter-spacing: 5rpx;
-  }
-  .text {
-    font-size: 30rpx;
-    color: #333;
-    line-height: 50rpx;
-  }
-  .button {
-    padding-top: 750rpx;
-    button {
-      width: 300rpx;
-      height: 100rpx;
-      line-height: 100rpx;
-      border-radius: 100rpx;
-      border: 1px solid #333;
-      font-size: 30rpx;
-      color: #333;
-      box-shadow: 0 5rpx 10rpx rgba(0,0,0,.2);
+  .list {
+    padding: 0 30rpx;
+    .item {
+      margin-top: 30rpx;
+      border-radius: 10rpx;
+      overflow: hidden;
+      box-shadow: 0 5rpx 5rpx rgba(0,0,0,.2);
+      image {
+        display: block;
+        width: 100%;
+      }
     }
   }
 }

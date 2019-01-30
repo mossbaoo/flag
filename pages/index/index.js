@@ -103,18 +103,12 @@ Page({
     })
   },
 
-  toSetFlag() {
-    wx.navigateTo({
-      url: '/pages/flag/setup/setup'
-    })
-  },
-
   // 分享
 	onShareAppMessage(res) {
     return {
-      title: '我在这里立了个flag，你也快来吧',
+      title: '这里有很多好玩的等着你',
 			path: '/pages/index/index',
-			imageUrl: '/images/img1.jpg',
+			imageUrl: '/images/share_img2.png',
 			success: res=> {
         wx.showToast({
 					title: '转发成功'

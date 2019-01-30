@@ -6,7 +6,7 @@
 <view class="container">
   <view class="myFlag" bindtap="switchMyFlag">
     <view class="top"><view><text class="iconfont icon-qizi"></text>{{myFlagArr.length}}/9</view></view>
-    <view class="bottom"><view>Flag<text class="iconfont icon-xiala"></text></view></view>
+    <view class="bottom"><view>查看<text class="iconfont icon-xiala"></text></view></view>
   </view>
   <view class="myFlagList {{isMyFlag? 'on':''}}" >
     <view class="top">
@@ -26,7 +26,7 @@
     <view class="box" bindtap="showFlag"><text class="iconfont icon-sync"></text>换一换<text class="bg"></text></view>
   </view>
   <view class="input">
-    <input type="text" placeholder="你还可以自己输入flag" bindinput="flagInput" value="{{flagInputValue}}" />
+    <input type="text" maxlength="12" placeholder="你还可以自己输入flag" bindinput="flagInput" value="{{flagInputValue}}" />
     <button bindtap="addFlag">添加</button>
   </view>
   <view class="next"><button bindtap="nextStep">下一步</button></view>

@@ -30,9 +30,12 @@
       </view>
     </view>
   </view>
-  <!-- <view class="title">FLAG</view>
-  <view class="text">有目标，才有动力</view> -->                            
-  <view class="button">
-    <button bindtap="toSetFlag">立个flag</button>
+  <view class="list">
+    <view class="item">
+      <navigator url="/pages/flag/setup/setup" hover-class="none"><image src="/images/item_1.png" mode="widthFix"></image></navigator>
+    </view>
+    <view class="item">
+      <navigator url="/pages/lovers/showAffection/showAffection" hover-class="none"><image src="/images/item_2.png" mode="widthFix"></image></navigator>
+    </view>
   </view>
 </view>

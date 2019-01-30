@@ -8,22 +8,29 @@ const app = getApp()
 Page({
   data: {
     image_a: '',
+    image_b: '',
   },
 
   onLoad() {
     
   },
 
-  chooseImage_a() {
+  chooseImage(e) {
     let that = this;
     wx.chooseImage({
       count: 1,
       sizeType: ['original', 'compressed'],
       sourceType: ['album', 'camera'],
       success(res) {
-        that.setData({
-          image_a: res.tempFilePaths[0]
-        })
+        if(e.currentTarget.dataset.type == 0) {
+          that.setData({
+            image_a: res.tempFilePaths[0]
+          })
+        }else {
+          that.setData({
+            image_b: res.tempFilePaths[0]
+          })
+        }
       }
     })
   },
@@ -31,9 +38,9 @@ Page({
   // 分享
 	onShareAppMessage(res) {
     return {
-      title: '我在这里立了个flag，你也快来吧',
+      title: '晒对象，晒爱豆',
 			path: '/pages/index/index',
-			imageUrl: '/images/img1.jpg',
+			imageUrl: '/images/share_img1.jpg',
 			success: res=> {
         wx.showToast({
 					title: '转发成功'

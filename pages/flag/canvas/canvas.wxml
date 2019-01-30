@@ -4,14 +4,19 @@
 -->
 
 <view class="container">
-  <view class="canvas">
-    <canvas canvas-id="canvas" style="width: {{canvasWidth}}px; height: {{canvasHeight}}px;"></canvas>
+  <view class="canvas_w" style="height: {{canvasHeight}}px;">
+    <view class="shareCanvas">
+      <canvas canvas-id="shareCanvas" style="width: {{canvasWidth}}px; height: {{canvasHeight}}px;"></canvas>
+    </view>
+    <view class="canvas">
+      <canvas canvas-id="canvas" style="width: {{canvasWidth}}px; height: {{canvasHeight}}px;"></canvas>
+    </view>
   </view>
   <view class="bottom">
     <button bindtap="saveImage">保存海报</button>
     <button open-type="share">邀请好友</button>
   </view>
-  <cover-view class="pickerButton" data-id="1" bindtap="switchSetType">变个色 / 换个图</cover-view>
+  <cover-view class="pickerButton" data-id="1" bindtap="switchSetType">换装</cover-view>
   <cover-view class="pickerMenu" wx:if="{{setType!=0}}">
     <cover-view class="border"></cover-view>
     <cover-view class="menu">
@@ -39,7 +44,7 @@
   </cover-view>
   <cover-view class="decoratePicker" wx:if="{{setType==2}}">
     <cover-view class="list">
-      <block wx:for="{{[1,2,3,4,5,6,7,8,9,10]}}" wx:for-item="item" wx:for-index="index">
+      <block wx:for="{{[0,1,2,3,4,5,6,7,8,9,10]}}" wx:for-item="item" wx:for-index="index">
         <cover-view class="item" data-id="{{item}}" bindtap="decoratePicker"><cover-image src="/images/decorate_img{{item}}.png" class="img" mode="widthFix"></cover-image></cover-view>
       </block>
     </cover-view>

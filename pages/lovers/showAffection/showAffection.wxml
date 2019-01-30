@@ -4,16 +4,29 @@
 -->
 
 <view class="container">
+  <view class="pageTop">
+    <view class="title">此时此刻，你想到的那个<text>Ta</text>是谁？</view>
+    <view class="text">男/女朋友？还是你的爱豆？</view>
+    <view class="text">上传你们的照片，秀波恩爱吧</view>
+    <view class="tips">（<text>*</text>建议使用正方形的照片，效果最佳哦）</view>
+  </view>
   <view class="main">
     <view class="item">
-      <view class="text">第一张</view>
-      <view class="img" bindtap="chooseImage_a">
+      <view class="title">我的照片</view>
+      <view class="img" data-type="0" bindtap="chooseImage">
         <text class="iconfont icon-jia" wx:if="{{!image_a}}"></text>
-        <image src="{{image_a}}" mode="widthFix" wx:if="{{image_a}}"></image>
+        <image src="{{image_a}}" mode="aspectFill" wx:if="{{image_a}}"></image>
+      </view>
+    </view>
+    <view class="item">
+      <view class="title">Ta的照片</view>
+      <view class="img" data-type="1" bindtap="chooseImage">
+        <text class="iconfont icon-jia" wx:if="{{!image_b}}"></text>
+        <image src="{{image_b}}" mode="aspectFill" wx:if="{{image_b}}"></image>
       </view>
     </view>
   </view>
-  <view class="canvas">
+  <!-- <view class="canvas">
     <canvas canvas-id="canvas" style="width: 300px;"></canvas>
-  </view>
+  </view> -->
 </view>

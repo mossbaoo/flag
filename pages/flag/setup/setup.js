@@ -130,7 +130,6 @@ Page({
   nextStep() {
     if(this.data.myFlagArr.length > 0) {
       app.globalData.myFlagArr = this.data.myFlagArr;
-      console.log(this.data.myFlagArr)
       wx.navigateTo({
         url: '/pages/flag/canvas/canvas'
       })
@@ -150,8 +149,7 @@ Page({
   },
 
   draggleTouch(e) {
-    var touchType = e.type;
-    switch(touchType){
+    switch(e.type){
       case "touchstart":
         this.touchStart(e);
         break;
@@ -197,9 +195,9 @@ Page({
   // 分享
 	onShareAppMessage(res) {
     return {
-      title: '我在这里立了个flag，你也快来吧',
+      title: '新年立个flag，我在这里等你',
 			path: '/pages/index/index',
-			imageUrl: '/images/img1.jpg',
+			imageUrl: '/images/share_img1.jpg',
 			success: res=> {
         wx.showToast({
 					title: '转发成功'

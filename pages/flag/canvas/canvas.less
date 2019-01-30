@@ -4,8 +4,23 @@
 */
 
 .container {
-  padding: 30rpx 0 80rpx;
-  .canvas {
+  padding: 30rpx 0 90rpx;
+  .canvas_w {
+    position: relative;
+    .canvas {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 2;
+      width: 100%;
+    }
+    .shareCanvas {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 1;
+      width: 100%;
+    }
     canvas {
       background: #fff;
       border-radius: 10rpx;
@@ -26,14 +41,15 @@
       border-radius: 70rpx;
       font-size: 26rpx;
       margin: 0 20rpx;
+      box-shadow: 0 5rpx 5rpx rgba(0,0,0,.2);
+      box-sizing: border-box;
       &:nth-child(1) {
         background: none;
         border: 1px solid #ff6600;
         color: #ff6600;
       }
       &:nth-child(2) {
-        background: #ff6600;
-        border: 1px solid #ff6600;
+        background: linear-gradient(#ff9933, #ff6600);
         color: #fff;
       }
     }
@@ -44,9 +60,9 @@
     bottom: 0;
     z-index: 999;
     width: 100%;
-    background: #333;
+    background: #ff6600;
     text-align: center;
-    line-height: 80rpx;
+    line-height: 90rpx;
     font-size: 30rpx;
     color: #fff;
   }

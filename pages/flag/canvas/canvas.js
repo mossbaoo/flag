@@ -39,7 +39,7 @@ Page({
 		colorLevel1Index: 0,
 		colorValue: '#000',
 		setType: 0,
-		decorate: 1,
+		decorate: 0,
 	},
 
 	onLoad() {
@@ -59,10 +59,12 @@ Page({
 		})
 
 		this.drawCanvas();
+		this.drawShareCanvas();
 	},
 
 	// 描绘画布
 	drawCanvas(color=this.data.colorArr[0].level1, decorate=this.data.decorate) {
+		console.log(111)
 		var ctx = wx.createCanvasContext('canvas')
 		// 设置背景
 		ctx.setFillStyle(color)
@@ -80,24 +82,56 @@ Page({
 		// 装饰图
 		ctx.drawImage('/images/decorate_img'+decorate+'.png', (this.data.canvasWidth-150)/2, 95, 150, 96)
 		
-		// 头部线条
-		// ctx.setStrokeStyle("#000")
-		// ctx.setLineWidth(0.3)
-		// ctx.moveTo(20, 200)
-		// ctx.lineTo(this.data.canvasWidth-20, 200)
-		// ctx.stroke()
 		ctx.drawImage('/images/line_top.png', 30, 200, this.data.canvasWidth-60, (this.data.canvasWidth-60)/500*10)
 
-		// 底部线条
-		// ctx.setStrokeStyle("#000")
-		// ctx.setLineWidth(0.3)
-		// ctx.moveTo(20, this.data.canvasHeight-120)
-		// ctx.lineTo(this.data.canvasWidth-20, this.data.canvasHeight-120)
-		// ctx.stroke()
 		ctx.drawImage('/images/line_bottom.png', 30, this.data.canvasHeight-130, this.data.canvasWidth-60, (this.data.canvasWidth-60)/500*10)
 
 		// 用户信息
-		ctx.setFontSize(14)
+		ctx.setFontSize(13)
+		ctx.setFillStyle("#333")
+		ctx.fillText('我是 '+app.globalData.userInfo.nickName, 35, this.data.canvasHeight-80);
+		ctx.fillText('于 '+util.formatTime(new Date()), 35, this.data.canvasHeight-55);
+		ctx.fillText('在此立了个flag', 35, this.data.canvasHeight-30);
+		
+		// 小程序码位置的图片
+		ctx.drawImage('/images/share_img1.jpg', this.data.canvasWidth-140, this.data.canvasHeight-110, 115, 90)
+		
+		// 列表
+		ctx.setFontSize(15)
+		ctx.setFillStyle("#333")
+		for(var i=0; i<this.data.myFlagArr.length; i++) {
+			ctx.fillText(i+1+'” '+this.data.myFlagArr[i], 35, 245+i*40);
+		}
+
+		// 完成
+    ctx.draw()
+	},
+
+	drawShareCanvas(color=this.data.colorArr[0].level1, decorate=this.data.decorate) {
+		console.log(222)
+		var ctx = wx.createCanvasContext('shareCanvas')
+		// 设置背景
+		ctx.setFillStyle(color)
+		ctx.fillRect(0, 0, this.data.canvasWidth, this.data.canvasHeight)
+		ctx.setFillStyle('#fff')
+		ctx.fillRect(5, 5, this.data.canvasWidth-10, this.data.canvasHeight-10)
+		// 年份
+		ctx.setFontSize(30)
+		ctx.setFillStyle("#333")
+		ctx.fillText('· 2 0 1 9 ·', (this.data.canvasWidth - ctx.measureText('· 2 0 1 9 ·').width)/2, 55)
+		// 头部标题
+		ctx.setFontSize(20)
+		ctx.setFillStyle("#333")
+		ctx.fillText('我的FLAG清单', (this.data.canvasWidth - ctx.measureText('我的FLAG清单').width)/2, 85)
+		// 装饰图
+		ctx.drawImage('/images/decorate_img'+decorate+'.png', (this.data.canvasWidth-150)/2, 95, 150, 96)
+		
+		ctx.drawImage('/images/line_top.png', 30, 200, this.data.canvasWidth-60, (this.data.canvasWidth-60)/500*10)
+
+		ctx.drawImage('/images/line_bottom.png', 30, this.data.canvasHeight-130, this.data.canvasWidth-60, (this.data.canvasWidth-60)/500*10)
+
+		// 用户信息
+		ctx.setFontSize(13)
 		ctx.setFillStyle("#333")
 		ctx.fillText('我是 '+app.globalData.userInfo.nickName, 35, this.data.canvasHeight-80);
 		ctx.fillText('于 '+util.formatTime(new Date()), 35, this.data.canvasHeight-55);
@@ -110,9 +144,9 @@ Page({
 		ctx.setFontSize(12)
 		ctx.setFillStyle("#333")
 		ctx.fillText('扫码立个flag', this.data.canvasWidth-103, this.data.canvasHeight-25);
-
+		
 		// 列表
-		ctx.setFontSize(16)
+		ctx.setFontSize(15)
 		ctx.setFillStyle("#333")
 		for(var i=0; i<this.data.myFlagArr.length; i++) {
 			ctx.fillText(i+1+'” '+this.data.myFlagArr[i], 35, 245+i*40);
@@ -142,6 +176,7 @@ Page({
 			colorValue: e.currentTarget.dataset.color
 		})
 		this.drawCanvas(e.currentTarget.dataset.color);
+		this.drawShareCanvas(e.currentTarget.dataset.color);
 	},
 
 	// 选择装饰图
@@ -151,13 +186,14 @@ Page({
 				decorate: e.currentTarget.dataset.id
 			})
 			this.drawCanvas(this.data.colorValue, e.currentTarget.dataset.id);
+			this.drawShareCanvas(this.data.colorValue, e.currentTarget.dataset.id);
 		}
 	},
 
 	// 生成图片并保存到本地
 	saveImage() {
 		wx.canvasToTempFilePath({
-			canvasId: 'canvas',
+			canvasId: 'shareCanvas',
 			success(res) {
 				console.log(res)
 				wx.saveImageToPhotosAlbum({
@@ -178,7 +214,7 @@ Page({
     return {
       title: '我在这里立了个flag，你也快来吧',
 			path: '/pages/index/index',
-			imageUrl: '/images/img1.jpg',
+			imageUrl: '/images/share_img1.jpg',
 			success: res=> {
         wx.showToast({
 					title: '转发成功'

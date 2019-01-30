@@ -38,7 +38,7 @@ page {
 }
 .container .user .name {
   font-size: 30rpx;
-  color: #333;
+  color: #fff;
   line-height: 80rpx;
 }
 .container .user.on {
@@ -71,8 +71,18 @@ page {
   align-items: center;
 }
 .container .list .item button .left {
+  display: flex;
+  height: 100rpx;
+  align-items: center;
+}
+.container .list .item button .left image {
+  display: block;
+  width: 40rpx;
+}
+.container .list .item button .left text {
   font-size: 30rpx;
   color: #333;
+  padding-left: 20rpx;
 }
 .container .list .item button .right text {
   font-size: 30rpx;

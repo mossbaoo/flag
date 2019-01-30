@@ -13,24 +13,27 @@
   height: 100%;
   background: rgba(0,0,0,.5);
 }
+
 .login_box {
   position: fixed;
-  top: 360rpx;
-  left: 100rpx;
+  top: 420rpx;
+  left: 125rpx;
   z-index: 99;
-  width: 550rpx;
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10rpx;
-  padding: 30rpx 0;
-  .logo image {
-    width: 120rpx;
-    height: 120rpx;
+  width: 500rpx;
+  .bg image {
     display: block;
-    border-radius: 50%;
+    width: 500rpx;
+    height: 280rpx;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 500rpx;
   }
   .icon text {
     font-size: 100rpx;
@@ -39,18 +42,60 @@
   .text {
     font-size: 30rpx;
     color: #333;
-    padding-top: 20rpx;
+    padding-top: 110rpx;
   }
   .btn {
-    padding-top: 50rpx;
+    padding-top: 30rpx;
     button {
       width: 200rpx;
-      height: 80rpx;
-      line-height: 80rpx;
+      height: 70rpx;
+      line-height: 70rpx;
       border-radius: 10rpx;
-      background: #1AAD16;
-      font-size: 30rpx;
+      background: #da251d;
+      font-size: 28rpx;
       color: #fff;
     }
   }
 }
+
+// .login_box {
+//   position: fixed;
+//   top: 360rpx;
+//   left: 100rpx;
+//   z-index: 99;
+//   width: 550rpx;
+//   background: #fff;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   border-radius: 10rpx;
+//   padding: 30rpx 0;
+//   .logo image {
+//     width: 120rpx;
+//     height: 120rpx;
+//     display: block;
+//     border-radius: 50%;
+//   }
+//   .icon text {
+//     font-size: 100rpx;
+//     color: #1AAD16;
+//   }
+//   .text {
+//     font-size: 30rpx;
+//     color: #333;
+//     padding-top: 20rpx;
+//   }
+//   .btn {
+//     padding-top: 50rpx;
+//     button {
+//       width: 200rpx;
+//       height: 80rpx;
+//       line-height: 80rpx;
+//       border-radius: 10rpx;
+//       background: #1AAD16;
+//       font-size: 30rpx;
+//       color: #fff;
+//     }
+//   }
+// }
