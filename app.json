@@ -4,7 +4,10 @@
     "pages/personal/personal",
     "pages/flag/setup/setup",
     "pages/flag/canvas/canvas",
-    "pages/lovers/showAffection/showAffection"
+    "pages/wish/setup/setup",
+    "pages/wish/canvas/canvas",
+    "pages/lovers/lovers",
+    "pages/lovers/showAffection/setup/setup"
   ],
   "window":{
     "backgroundTextStyle":"light",

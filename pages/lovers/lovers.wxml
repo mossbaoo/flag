@@ -1,0 +1,12 @@
+<!--
+  Page: 情侣专区
+  Author: Moss
+-->
+
+<view class="container">
+  <view class="list">
+    <view class="item">
+      <navigator url="/pages/lovers/showAffection/setup/setup" hover-class="none"><image src="/images/item_2.png" mode="widthFix"></image></navigator>
+    </view>
+  </view>
+</view>

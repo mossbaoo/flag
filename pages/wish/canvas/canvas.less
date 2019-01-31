@@ -1,0 +1,193 @@
+/**
+ * Page: canvas
+ * Author: Moss
+*/
+
+.container {
+  padding: 30rpx 0 90rpx;
+  .canvas_w {
+    position: relative;
+    .canvas {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 2;
+      width: 100%;
+    }
+    .shareCanvas {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 1;
+      width: 100%;
+    }
+    canvas {
+      background: #fff;
+      border-radius: 10rpx;
+      margin: 20rpx auto;
+      box-shadow: 0 6rpx 6rpx rgba(0,0,0,.1);
+      margin: 0 auto;
+    }
+  }
+  .bottom {
+    display: flex;
+    justify-content: center;
+    padding: 50rpx 0;
+    button {
+      width: 200rpx;
+      height: 70rpx;
+      line-height: 70rpx;
+      padding: 0;
+      border-radius: 70rpx;
+      font-size: 26rpx;
+      margin: 0 20rpx;
+      box-shadow: 0 5rpx 5rpx rgba(0,0,0,.2);
+      box-sizing: border-box;
+      &:nth-child(1) {
+        background: none;
+        border: 1px solid #ff6600;
+        color: #ff6600;
+      }
+      &:nth-child(2) {
+        background: linear-gradient(#ff9933, #ff6600);
+        color: #fff;
+      }
+    }
+  }
+  .pickerButton {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+    width: 100%;
+    background: #ff6600;
+    text-align: center;
+    line-height: 90rpx;
+    font-size: 30rpx;
+    color: #fff;
+  }
+  .pickerMenu {
+    position: fixed;
+    left: 0;
+    bottom: 220rpx;
+    z-index: 999;
+    width: 100%;
+    background: #fff;
+    .menu {
+      display: flex;
+      .item {
+        flex: 1;
+        line-height: 80rpx;
+        text-align: center;
+        &.on {
+          color: #ff6600;
+        }
+      }
+      .line {
+        flex: 0 0 2rpx;
+        height: 50rpx;
+        margin-top: 15rpx;
+        background: #eee;
+      }
+      .close {
+        flex: 0 0 80rpx;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .icon {
+          width: 36rpx;
+          height: 36rpx;
+          display: block;
+        }
+      }
+    }
+    .border {
+      height: 2rpx;
+      background: #eee;
+    }
+  }
+  .colorPicker {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+    width: 100%;
+    background: #fff;
+    height: 220rpx;
+    .level1 {
+      width: 100%;
+      padding-top: 40rpx;
+      padding-bottom: 30rpx;
+      .list {
+        width: 100%;
+        overflow-x: scroll;
+        .item {
+          width: 60rpx;
+          height: 60rpx;
+          margin-left: 50rpx;
+          display: inline-block;
+          overflow: hidden;
+          position: relative;
+          &:last-child {
+            margin-right: 50rpx;
+          }
+          .check {
+            position: absolute;
+            top: 16rpx;
+            left: 16rpx;
+            z-index: 99;
+            width: 30rpx;
+            height: 30rpx;
+            display: block;
+          }
+        }
+      }
+    }
+    .level2 {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 30rpx;
+      .item {
+        width: 60rpx;
+        height: 40rpx;
+        position: relative;
+        .check {
+          position: absolute;
+          top: 6rpx;
+          left: 16rpx;
+          z-index: 99;
+          width: 30rpx;
+          height: 30rpx;
+          display: block;
+        }
+      }
+    }
+  }
+  .decoratePicker {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+    width: 100%;
+    background: #fff;
+    height: 220rpx;
+    .list {
+      width: 100%;
+      overflow-x: scroll;
+      padding-top: 40rpx;
+      .item {
+        width: 220rpx;
+        margin-left: 50rpx;
+        display: inline-block;
+        &:last-child {
+          margin-right: 50rpx;
+        }
+        .img {
+          width: 220rpx;
+          display: block;
+        }
+      }
+    }
+    
+  }
+}
