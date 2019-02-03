@@ -1,165 +1,52 @@
 /**
- * Page: 建立flag
+ * Page: 许愿中
  * Author: Moss
  */
-.container {
-  padding: 20rpx 30rpx 0;
-}
-.container .myFlag .top {
-  display: flex;
-  align-items: center;
-  font-size: 28rpx;
-  color: #000;
-}
-.container .myFlag .top view {
-  height: 40rpx;
-  border-bottom: 1px solid #000;
-  padding-right: 15rpx;
-}
-.container .myFlag .top text {
-  color: #ff0000;
-}
-.container .myFlag .bottom {
-  height: 40rpx;
-  display: flex;
-  align-items: center;
-  font-size: 24rpx;
-  color: #000;
-}
-.container .myFlag .bottom view {
-  margin-left: 10rpx;
-}
-.container .myFlag .bottom text {
-  font-size: 26rpx;
-  padding-left: 4rpx;
-}
-.container .myFlagList {
-  position: fixed;
-  top: 180rpx;
-  left: 50rpx;
-  z-index: 99;
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  padding: 10rpx 30rpx;
-  box-sizing: border-box;
-  border: 1px solid #000;
-  border-radius: 10rpx;
-  background: #fff;
-  opacity: 0;
-  transition: all 0.5s;
-}
-.container .myFlagList.on {
-  width: 650rpx;
-  height: 700rpx;
-  opacity: 1;
-}
-.container .myFlagList .top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 90rpx;
-}
-.container .myFlagList .top .title {
-  font-size: 32rpx;
-}
-.container .myFlagList .top .close text {
-  font-size: 40rpx;
-}
-.container .myFlagList .item {
-  font-size: 30rpx;
-  color: #333;
-  height: 64rpx;
-  display: flex;
-  align-items: center;
-}
-.container .myFlagList .item text {
-  font-size: 34rpx;
-  color: #ff6600;
-  padding-right: 5rpx;
-}
-.container .select {
-  padding: 100rpx 40rpx 0;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-.container .select .item {
-  width: 45%;
-  font-size: 30rpx;
-  color: #000;
-  height: 100rpx;
-  margin-bottom: 30rpx;
-}
-.container .select .item view {
-  display: flex;
-  line-height: 35rpx;
-}
-.container .select .item view text {
-  font-size: 34rpx;
-  color: #ff6600;
-  padding-right: 5rpx;
-}
-.container .change {
-  display: flex;
-  justify-content: center;
-  margin-top: 50rpx;
-}
-.container .change .box {
-  position: relative;
-  width: 120rpx;
-  height: 120rpx;
-  font-size: 28rpx;
-  color: #fff;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.container .change .box .bg {
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: -1;
+.container .banner image {
   display: block;
-  width: 120rpx;
-  height: 120rpx;
-  line-height: 120rpx;
-  background: #333;
-  border-radius: 10rpx;
+  width: 100%;
 }
-.container .change .box .iconfont {
-  font-size: 36rpx;
-  padding-top: 22rpx;
+.container .form {
+  padding: 100rpx 50rpx 0;
 }
-.container .input {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 80rpx;
-  border: 1px solid #333;
-  padding: 0 5rpx 0 30rpx;
-  margin: 160rpx 40rpx 0;
+.container .form .item {
+  position: relative;
+  margin-bottom: 110rpx;
 }
-.container .input input {
-  width: 400rpx;
+.container .form .item .input input {
+  width: 100%;
   height: 80rpx;
+  border-bottom: 1px solid #333;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.container .form .item .placeholder {
+  position: absolute;
+  top: 0;
+  left: 20rpx;
+  z-index: 0;
   font-size: 30rpx;
-}
-.container .input button {
-  width: 150rpx;
-  line-height: 60rpx;
-  border-radius: 60rpx;
-  font-size: 30rpx;
-  background: #333;
-  color: #fff;
-}
-.container .next {
-  margin: 50rpx 40rpx 0;
-}
-.container .next button {
+  color: #999;
   line-height: 80rpx;
-  background: #333;
+  transition: all .3s;
+}
+.container .form .item .placeholder text {
+  color: #ff6600;
+  padding-right: 5rpx;
+}
+.container .form .item .placeholder.on {
+  top: -40rpx;
+  left: 0;
+  line-height: 40rpx;
+  color: #333;
+  font-size: 28rpx;
+}
+.container .button {
+  padding: 50rpx 50rpx 0;
+}
+.container .button button {
+  line-height: 80rpx;
+  background: #ff6600;
   font-size: 30rpx;
   color: #fff;
   border-radius: 80rpx;

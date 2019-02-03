@@ -4,49 +4,16 @@
 -->
 
 <view class="container">
-  <view class="canvas_w" style="height: {{canvasHeight}}px;">
+  <view class="canvas_w" style="height: 533px;">
     <view class="shareCanvas">
-      <canvas canvas-id="shareCanvas" style="width: {{canvasWidth}}px; height: {{canvasHeight}}px;"></canvas>
+      <canvas canvas-id="shareCanvas" style="width: 300px; height: 533px;"></canvas>
     </view>
     <view class="canvas">
-      <canvas canvas-id="canvas" style="width: {{canvasWidth}}px; height: {{canvasHeight}}px;"></canvas>
+      <canvas canvas-id="canvas" style="width: 300px; height: 533px;"></canvas>
     </view>
   </view>
   <view class="bottom">
     <button bindtap="saveImage">保存海报</button>
     <button open-type="share">邀请好友</button>
   </view>
-  <cover-view class="pickerButton" data-id="1" bindtap="switchSetType">换装</cover-view>
-  <cover-view class="pickerMenu" wx:if="{{setType!=0}}">
-    <cover-view class="border"></cover-view>
-    <cover-view class="menu">
-      <cover-view class="item {{setType==1? 'on':''}}" data-id="1" bindtap="switchSetType">颜色</cover-view>
-      <cover-view class="line"></cover-view>
-      <cover-view class="item {{setType==2? 'on':''}}" data-id="2" bindtap="switchSetType">小装饰</cover-view>
-      <cover-view class="line"></cover-view>
-      <cover-view class="close" data-id="0" bindtap="switchSetType"><cover-image src="/images/close.png" mode="widthFix" class="icon"></cover-image></cover-view>
-    </cover-view>
-    <cover-view class="border"></cover-view>
-  </cover-view>
-  <cover-view class="colorPicker" wx:if="{{setType==1}}">
-    <cover-view class="level1">
-      <cover-view class="list">
-        <block wx:for="{{colorArr}}" wx:for-item="item" wx:for-index="index">
-          <cover-view class="item" data-color="{{item.level1}}" data-level="1" data-index="{{index}}" bindtap="colorPicker" style="background: {{item.level1}}"><cover-image src="/images/circle.png" class="check" wx:if="{{item.level1==colorValue}}"></cover-image></cover-view>
-        </block>
-      </cover-view>
-    </cover-view>
-    <cover-view class="level2">
-      <block wx:for="{{colorArr[colorLevel1Index].level2}}" wx:for-item="item" wx:for-index="index">
-        <cover-view class="item" data-color="{{item}}" data-level="2" bindtap="colorPicker" style="background: {{item}}"><cover-image src="/images/circle.png" class="check" wx:if="{{item==colorValue}}"></cover-image></cover-view>
-      </block>
-    </cover-view>
-  </cover-view>
-  <cover-view class="decoratePicker" wx:if="{{setType==2}}">
-    <cover-view class="list">
-      <block wx:for="{{[0,1,2,3,4,5,6,7,8,9,10]}}" wx:for-item="item" wx:for-index="index">
-        <cover-view class="item" data-id="{{item}}" bindtap="decoratePicker"><cover-image src="/images/decorate_img{{item}}.png" class="img" mode="widthFix"></cover-image></cover-view>
-      </block>
-    </cover-view>
-  </cover-view>
 </view>

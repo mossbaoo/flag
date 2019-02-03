@@ -3,6 +3,7 @@ App({
   globalData: {
     userInfo: null,
     myFlagArr: [],
+    myWishArr: [],
   },
 
   onLaunch() {

@@ -1,33 +1,23 @@
 <!--
-  Page: 建立flag
+  Page: 许愿中
   Author: Moss
 -->
 
 <view class="container">
-  <view class="myFlag" bindtap="switchMyFlag">
-    <view class="top"><view><text class="iconfont icon-qizi"></text>{{myFlagArr.length}}/9</view></view>
-    <view class="bottom"><view>查看<text class="iconfont icon-xiala"></text></view></view>
-  </view>
-  <view class="myFlagList {{isMyFlag? 'on':''}}" >
-    <view class="top">
-      <view class="title">我的Flag</view>
-      <view class="close" bindtap="switchMyFlag"><text class="iconfont icon-close"></text></view>
+  <view class="banner"><image src="/images/wish_banner.jpg" mode="widthFix"></image></view>
+  <view class="form">
+    <view class="item">
+      <view class="input"><input type="text" data-index="0" bindfocus="bindfocus" bindblur="bindblur" bindinput="bindinput" value="{{myWishArr[0].value}}" maxlength="12" /></view>
+      <view class="placeholder {{myWishArr[0].focus? 'on':''}}"><text>*</text>愿望一</view>
     </view>
-    <block wx:for="{{myFlagArr}}" wx:for-index="index" wx:for-item="item">
-      <view class="item" data-index="{{index}}" catchtouchstart="draggleTouch" catchtouchmove="draggleTouch" catchtouchend="draggleTouch"><text class="iconfont icon-check"></text>{{item}}</view>
-    </block>
+    <view class="item">
+      <view class="input"><input type="text" data-index="1" bindfocus="bindfocus" bindblur="bindblur" bindinput="bindinput" value="{{myWishArr[1].value}}" maxlength="12" /></view>
+      <view class="placeholder {{myWishArr[1].focus? 'on':''}}"><text>*</text>愿望二</view>
+    </view>
+    <view class="item">
+      <view class="input"><input type="text" data-index="2" bindfocus="bindfocus" bindblur="bindblur" bindinput="bindinput" value="{{myWishArr[2].value}}" maxlength="12" /></view>
+      <view class="placeholder {{myWishArr[2].focus? 'on':''}}"><text>*</text>愿望三</view>
+    </view>
   </view>
-  <view class="select">
-    <block wx:for="{{showFlagArr}}" wx:for-index="index" wx:for-item="item">
-      <view class="item"><view data-id="{{item.id}}" data-index="{{index}}" data-checked="{{item.checked}}" bindtap="selectFlag"><text class="iconfont {{item.checked? 'icon-check':'icon-circle'}}"></text>{{item.name}}</view></view>
-    </block>
-  </view>
-  <view class="change">
-    <view class="box" bindtap="showFlag"><text class="iconfont icon-sync"></text>换一换<text class="bg"></text></view>
-  </view>
-  <view class="input">
-    <input type="text" maxlength="12" placeholder="你还可以自己输入flag" bindinput="flagInput" value="{{flagInputValue}}" />
-    <button bindtap="addFlag">添加</button>
-  </view>
-  <view class="next"><button bindtap="nextStep">下一步</button></view>
+  <view class="button"><button bindtap="nextStep">下一步</button></view>
 </view>
