@@ -7,7 +7,8 @@
     "pages/wish/setup/setup",
     "pages/wish/canvas/canvas",
     "pages/lovers/lovers",
-    "pages/lovers/showAffection/setup/setup"
+    "pages/lovers/showAffection/setup/setup",
+    "pages/signature/signature"
   ],
   "window":{
     "backgroundTextStyle":"light",

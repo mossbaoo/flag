@@ -10,11 +10,11 @@
   </view>
   <view class="myFlagList {{isMyFlag? 'on':''}}" >
     <view class="top">
-      <view class="title">我的Flag</view>
+      <view class="title">我的Flag<text>(长按删除)</text></view>
       <view class="close" bindtap="switchMyFlag"><text class="iconfont icon-close"></text></view>
     </view>
     <block wx:for="{{myFlagArr}}" wx:for-index="index" wx:for-item="item">
-      <view class="item" data-index="{{index}}" catchtouchstart="draggleTouch" catchtouchmove="draggleTouch" catchtouchend="draggleTouch"><text class="iconfont icon-check"></text>{{item}}</view>
+      <view class="item" data-index="{{index}}" bindlongpress="deleteFlag"><text class="iconfont icon-check"></text>{{item}}</view>
     </block>
   </view>
   <view class="select">

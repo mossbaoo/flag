@@ -6,7 +6,7 @@
 <view class="container">
   <view class="list">
     <view class="item">
-      <navigator url="/pages/lovers/showAffection/setup/setup" hover-class="none"><image src="/images/item_2.png" mode="widthFix"></image></navigator>
+      <navigator url="/pages/lovers/showAffection/setup/setup" hover-class="none"><image src="/images/item_4.png" mode="widthFix"></image></navigator>
     </view>
   </view>
 </view>

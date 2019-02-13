@@ -31,14 +31,17 @@
     </view>
   </view>
   <view class="list">
-    <!-- <view class="item">
+    <view class="item">
       <navigator url="/pages/wish/setup/setup" hover-class="none"><image src="/images/item_3.png" mode="widthFix"></image></navigator>
-    </view> -->
+    </view>
     <view class="item">
       <navigator url="/pages/flag/setup/setup" hover-class="none"><image src="/images/item_1.png" mode="widthFix"></image></navigator>
     </view>
     <view class="item">
       <navigator url="/pages/lovers/lovers" hover-class="none"><image src="/images/item_2.png" mode="widthFix"></image></navigator>
+    </view>
+    <view class="item">
+      <navigator url="/pages/signature/signature" hover-class="none"><image src="/images/item_5.png" mode="widthFix"></image></navigator>
     </view>
   </view>
 </view>

@@ -55,12 +55,12 @@ Page({
 		// 祝福文字
 		ctx.setFontSize(10)
 		ctx.setFillStyle("#333")
-		ctx.fillText('新年要来到，祝福声声来报道：', 110, 440)
-		ctx.fillText('愿快乐常伴你左右，好运平安', 110, 455)
-		ctx.fillText('在前后，幸福甜蜜绕心头。', 110, 470)
+		ctx.fillText('保存图片，分享给亲朋好友', 110, 440)
+		ctx.fillText('让他们助你一臂之力吧', 110, 455)
+		ctx.fillText('祝您：早日实现愿望！', 110, 470)
 		
 		// 底部文字
-		ctx.setFontSize(12)
+		ctx.setFontSize(10)
 		ctx.setFillStyle("#fff")
 		ctx.fillText('小程序：码了个宝', (300 - ctx.measureText('小程序：码了个宝').width)/2, 515)
 		
@@ -97,12 +97,12 @@ Page({
 		// 祝福文字
 		ctx.setFontSize(10)
 		ctx.setFillStyle("#333")
-		ctx.fillText('新年要来到，祝福声声来报道：', 110, 440)
-		ctx.fillText('愿快乐常伴你左右，好运平安', 110, 455)
-		ctx.fillText('在前后，幸福甜蜜绕心头。', 110, 470)
+		ctx.fillText('嗯，这是我的新年愿望', 110, 440)
+		ctx.fillText('希望你能为我的愿望助一臂之力', 110, 455)
+		ctx.fillText('你的愿望是什么？快来扫码玩玩', 110, 470)
 
 		// 底部文字
-		ctx.setFontSize(12)
+		ctx.setFontSize(10)
 		ctx.setFillStyle("#fff")
 		ctx.fillText('小程序：码了个宝', (300 - ctx.measureText('小程序：码了个宝').width)/2, 515)
 		

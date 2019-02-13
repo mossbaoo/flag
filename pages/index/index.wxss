@@ -103,7 +103,7 @@
   background: linear-gradient(#ff9933, #ff6600);
 }
 .container .list {
-  padding: 0 30rpx;
+  padding: 0 30rpx 30rpx;
 }
 .container .list .item {
   margin-top: 30rpx;

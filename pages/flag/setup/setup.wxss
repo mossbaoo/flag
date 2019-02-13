@@ -63,6 +63,11 @@
 .container .myFlagList .top .title {
   font-size: 32rpx;
 }
+.container .myFlagList .top .title text {
+  font-size: 28rpx;
+  color: #888;
+  padding-left: 10rpx;
+}
 .container .myFlagList .top .close text {
   font-size: 40rpx;
 }

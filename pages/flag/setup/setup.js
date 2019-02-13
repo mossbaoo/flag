@@ -111,7 +111,12 @@ Page({
 
   // 添加flag
   addFlag() {
-    if(this.data.myFlagArr.length < 9) {
+    if(!this.data.flagInputValue) {
+      wx.showToast({
+        title: '请输入你的flag',
+        icon: 'none'
+      })
+    }else if(this.data.myFlagArr.length < 9) {
       let myFlagArr = this.data.myFlagArr;
       myFlagArr.push(this.data.flagInputValue)
       this.setData({
@@ -190,6 +195,24 @@ Page({
 
   touchEnd(e) {
     
+  },
+
+  // 删除flag
+  deleteFlag(e) {
+    let that = this;
+    let myFlagArr = this.data.myFlagArr;
+    wx.showModal({
+      title: '提示',
+      content: '您确定要删除“'+this.data.myFlagArr[e.currentTarget.dataset.index]+'”吗？',
+      success(res) {
+        if (res.confirm) {
+          myFlagArr.splice(e.currentTarget.dataset.index, 1);
+          that.setData({
+            myFlagArr: myFlagArr
+          })
+        }
+      }
+    })
   },
 
   // 分享
