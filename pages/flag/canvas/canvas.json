@@ -1,3 +1,6 @@
 {
-    "navigationBarTitleText": "我的flag"
+    "navigationBarTitleText": "我的flag",
+    "usingComponents": {
+      "topnav": "/components/topnav/topnav"
+    }
 }

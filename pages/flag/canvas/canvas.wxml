@@ -4,6 +4,7 @@
 -->
 
 <view class="container">
+  <topnav inner-title="{{title}}" is-show-back="true"></topnav>
   <view class="canvas_w" style="height: {{canvasHeight}}px;">
     <view class="shareCanvas">
       <canvas canvas-id="shareCanvas" style="width: {{canvasWidth}}px; height: {{canvasHeight}}px;"></canvas>

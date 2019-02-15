@@ -4,14 +4,17 @@
 -->
 
 <view class="container">
+  <topnav inner-title="{{title}}" is-show-back="true"></topnav>
   <view class="list">
     <block wx:for="{{dataArr}}" wx:for-item="item" wx:for-index="index">
       <view class="item" data-index="{{index}}" bindtap="copy">{{item}}</view>
     </block>
   </view>
-  <view class="guide_mask" wx:if="{{isGuide}}">
-    <view class="item" data-index="0" bindtap="copy">{{dataArr[0]}}</view>
-    <view class="finger" data-index="0" bindtap="copy"><image src="/images/finger.png" mode="widthFix" animation="{{animation}}"></image></view>
+  <view class="guide_mask" wx:if="{{isGuide}}" style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+    <view class="item" data-index="0" bindtap="copy">
+      {{dataArr[0]}}
+      <view class="finger"><image src="/images/finger.png" mode="widthFix" animation="{{animation}}"></image></view>
     <view class="text">点击可以复制，试试看</view>
+    </view>
   </view>
 </view>

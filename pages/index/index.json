@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "码了个宝",
   "usingComponents": {
-    "authLogin": "/components/authLogin/authLogin"
+    "authLogin": "/components/authLogin/authLogin",
+    "topnav": "/components/topnav/topnav"
   }
 }

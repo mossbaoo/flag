@@ -26,7 +26,7 @@ page {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
-  padding: 30rpx;
+  padding: 0 30rpx;
   box-sizing: border-box;
 }
 .container .guide_mask .item {
@@ -37,6 +37,8 @@ page {
   color: #333;
   line-height: 35rpx;
   padding: 30rpx;
+  margin-top: 30rpx;
+  position: relative;
 }
 .container .guide_mask .finger {
   position: absolute;
@@ -49,7 +51,7 @@ page {
 }
 .container .guide_mask .text {
   position: absolute;
-  right: 50rpx;
+  right: 20rpx;
   top: 155rpx;
   font-size: 28rpx;
   color: #fff;

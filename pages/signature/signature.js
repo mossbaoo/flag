@@ -7,6 +7,7 @@ const app = getApp()
 
 Page({
   data: {
+    title:'个性签名',
     dataArr: [
       '如果爱，请深爱；若不爱，请离开。',
       '请不要迷恋哥，哥只是一个传说。',
@@ -22,19 +23,25 @@ Page({
       '怼吥起 、 莪還湜暧伱',
       '〆、妳旳名字，莪旳心事。',
     ],
-    isGuide: false
+    isGuide: false,
+    statusBarHeight: app.globalData.statusBarHeight,
+    titleBarHeight: app.globalData.titleBarHeight
   },
 
   onLoad() {
     this.setData({
       isGuide: true
     })
+
+    var pages = getCurrentPages();
+    var prevPage = pages[pages.length - 2];
+    console.log(prevPage)
   },
 
   onReady() {
     var count = 0;
     this.animation = wx.createAnimation({
-      duration: 1000, // 动画持续时间，单位 ms
+      duration: 500, // 动画持续时间，单位 ms
       timingFunction: 'linear', // 动画的效果
       delay: 100, // 动画延迟时间，单位 ms
       transformOrigin: '50% 50%' // 动画的中心点
@@ -52,10 +59,10 @@ Page({
       });
       
       count++;
-      if (count == 1000) {
+      if (count == 500) {
         count = 0;
       }
-    }.bind(this), 1000);
+    }.bind(this), 500);
   },  
 
   // 复制
@@ -74,7 +81,7 @@ Page({
   // 分享
 	onShareAppMessage(res) {
     return {
-      title: '晒对象，晒爱豆',
+      title: '回忆杀！那些年的个性签名，有没有你用过的？',
 			path: '/pages/index/index',
 			imageUrl: '/images/share_img1.jpg',
 			success: res=> {

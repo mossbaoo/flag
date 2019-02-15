@@ -4,6 +4,7 @@
 -->
 
 <view class="container">
+  <topnav inner-title="{{title}}" is-show-back="true"></topnav>
   <authLogin wx:if="{{!hasUserInfo}}" bind:getUserInfoEvent="getUserInfo"></authLogin>
   <view class="topCollect {{isCollect? 'on':''}}">
     点击<text class="iconfont icon-more"></text>添加到我的小程序<text class="iconfont icon-jiantou1"></text>

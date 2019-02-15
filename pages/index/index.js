@@ -11,6 +11,7 @@ Page({
     hasUserInfo: true,
     isCollect: false,
     timeName: '',
+    title:'码了个宝'
   },
 
   onShow() {
@@ -35,6 +36,7 @@ Page({
         wx.hideLoading()
       }
     })
+
   },
 
   // 获取用户信息

@@ -1,0 +1,19 @@
+<!-- 
+  Component: 顶部菜单栏
+  Author: Moss
+ -->
+
+<view style="padding-top:{{statusBarHeight+titleBarHeight}}px">
+  <view class="header">
+    <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
+    <view class="title-bar" style="height:{{titleBarHeight}}px">
+      <view class="left" wx:if="{{isShowBack=='true'}}">
+        <button bindtap="goback" hover-class="button-hover"><text class="iconfont icon-back"></text></button>
+        <button bindtap="gohome" hover-class="button-hover"><text class="iconfont icon-home"></text></button>
+      </view>
+      <view class="title">{{innerTitle}}</view>
+      <view class="right"></view>
+    </view>
+  </view>
+</view>
+<slot></slot>
