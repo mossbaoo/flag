@@ -1,9 +1,12 @@
 
 const app = getApp();
-const util = require('../../../utils/util.js')
+const util = require('../../utils/util.js')
 
 Page({
   data: {
+    barTitle: '立个flag',
+		statusBarHeight: app.globalData.statusBarHeight,
+    titleBarHeight: app.globalData.titleBarHeight,
     flagArr: [
       {id: 1, name: '变瘦变美', checked: false},
       {id: 2, name: '赚个一百万', checked: false},
@@ -136,7 +139,7 @@ Page({
     if(this.data.myFlagArr.length > 0) {
       app.globalData.myFlagArr = this.data.myFlagArr;
       wx.navigateTo({
-        url: '/pages/flag/canvas/canvas'
+        url: '/pages/flag/canvas'
       })
     }else {
       wx.showToast({

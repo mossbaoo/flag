@@ -156,7 +156,10 @@ button::after {
   font-weight: bold;
 }
 .title-bar .left button:first-child {
-  border-right: 1px solid #e1e1e1;
+  border-right: 1rpx solid #e1e1e1;
+}
+.title-bar .leftNull {
+  width: 158rpx;
 }
 .title-bar .title {
   font-size: 32rpx;

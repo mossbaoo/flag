@@ -1,9 +1,10 @@
 
 const app = getApp();
-const util = require('../../../utils/util.js')
+const util = require('../../utils/util.js')
 
 Page({
   data: {
+    barTitle: '许愿中',
     myWishArr: [
       {focus: false, value: ''},
       {focus: false, value: ''},
@@ -52,7 +53,7 @@ Page({
       });
       app.globalData.myWishArr = myWishArr;
       wx.navigateTo({
-        url: '/pages/wish/canvas/canvas'
+        url: '/pages/wish/canvas'
       })
     }
   },

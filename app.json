@@ -2,12 +2,12 @@
   "pages":[
     "pages/index/index",
     "pages/personal/personal",
-    "pages/flag/setup/setup",
-    "pages/flag/canvas/canvas",
-    "pages/wish/setup/setup",
-    "pages/wish/canvas/canvas",
+    "pages/flag/setup",
+    "pages/flag/canvas",
+    "pages/wish/setup",
+    "pages/wish/canvas",
     "pages/lovers/lovers",
-    "pages/lovers/showAffection/setup/setup",
+    "pages/lovers/showAffection/setup",
     "pages/signature/signature"
   ],
   "window":{

@@ -4,15 +4,19 @@
  */
 
 const app = getApp();
-const util = require('../../../utils/util.js');
+const util = require('../../utils/util.js');
 
 Page({
 	data: {
+		barTitle: '我的新年愿望',
 		logo: '/images/logo2.png',
 		code: '/images/code.jpg',
 		myWishArr: [],
 		setType: 0,
 		decorate: 0,
+		showCanvas: true,
+		canvasImage: null,
+		shareCanvasImage: null
 	},
 
 	onLoad() {
@@ -27,7 +31,7 @@ Page({
 
 	// 描绘画布
 	drawCanvas() {
-		console.log(111)
+		let that = this;
 		var ctx = wx.createCanvasContext('canvas')
 		// 背景图
 		ctx.drawImage('/images/wish_bg.jpg', 0, 0, 300, 533)
@@ -65,11 +69,29 @@ Page({
 		ctx.fillText('小程序：码了个宝', (300 - ctx.measureText('小程序：码了个宝').width)/2, 515)
 		
 		// 完成
-    ctx.draw()
+		ctx.draw()
+		
+		wx.showLoading({
+			title: '图片生成中',
+		})
+		
+		setTimeout(()=>{
+			wx.canvasToTempFilePath({
+				canvasId: 'canvas',
+				success(res) {
+					that.setData({
+						canvasImage: res.tempFilePath,
+						showCanvas: false
+					})
+					wx.hideLoading()
+				}
+			})
+		}, 500)
+
 	},
 
 	drawShareCanvas() {
-		console.log(222)
+		let that = this;
 		var ctx = wx.createCanvasContext('shareCanvas')
 		// 背景图
 		ctx.drawImage('/images/wish_bg.jpg', 0, 0, 300, 533)
@@ -107,23 +129,35 @@ Page({
 		ctx.fillText('小程序：码了个宝', (300 - ctx.measureText('小程序：码了个宝').width)/2, 515)
 		
 		// 完成
-    ctx.draw()
+		ctx.draw()
+		
+		wx.showLoading({
+			title: '图片生成中',
+		})
+		
+		setTimeout(()=>{
+			wx.canvasToTempFilePath({
+				canvasId: 'shareCanvas',
+				success(res) {
+					that.setData({
+						shareCanvasImage: res.tempFilePath,
+						showCanvas: false
+					})
+					wx.hideLoading()
+				}
+			})
+		}, 500)
+
 	},
 
-	// 生成图片并保存到本地
+	// 保存到本地
 	saveImage() {
-		wx.canvasToTempFilePath({
-			canvasId: 'shareCanvas',
+		wx.saveImageToPhotosAlbum({
+			filePath: this.data.shareCanvasImage,
 			success(res) {
-				console.log(res)
-				wx.saveImageToPhotosAlbum({
-					filePath: res.tempFilePath,
-					success(res) {
-						wx.showToast({
-							title: '保存成功',
-							icon: 'success'
-						})
-					}
+				wx.showToast({
+					title: '保存成功',
+					icon: 'success'
 				})
 			}
 		})

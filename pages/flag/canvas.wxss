@@ -25,9 +25,16 @@
 .container .canvas_w canvas {
   background: #fff;
   border-radius: 10rpx;
-  margin: 20rpx auto;
   box-shadow: 0 6rpx 6rpx rgba(0, 0, 0, 0.1);
   margin: 0 auto;
+}
+.container .canvas_w .canvasImage {
+  width: 100%;
+}
+.container .canvas_w .canvasImage image {
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 6rpx 6rpx rgba(0, 0, 0, 0.1);
 }
 .container .bottom {
   display: flex;

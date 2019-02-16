@@ -11,7 +11,7 @@ Page({
     hasUserInfo: true,
     isCollect: false,
     timeName: '',
-    title:'码了个宝'
+    barTitle: '码了个宝'
   },
 
   onShow() {

@@ -7,6 +7,7 @@ const app = getApp()
 
 Page({
   data: {
+    barTitle: '情侣专区',
     
   },
 

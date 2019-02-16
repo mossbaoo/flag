@@ -7,6 +7,7 @@ const app = getApp()
 
 Page({
   data: {
+    barTitle: '秀恩爱',
     image_a: '',
     image_b: '',
   },

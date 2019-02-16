@@ -2,7 +2,7 @@
  * Page: 建立flag
  * Author: Moss
  */
-.container {
+.container .content {
   padding: 20rpx 30rpx 0;
 }
 .container .myFlag .top {

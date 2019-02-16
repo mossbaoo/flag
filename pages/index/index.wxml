@@ -4,7 +4,7 @@
 -->
 
 <view class="container">
-  <topnav inner-title="{{title}}" is-show-back="true"></topnav>
+  <topnav inner-title="{{barTitle}}" is-show-back="false"></topnav>
   <authLogin wx:if="{{!hasUserInfo}}" bind:getUserInfoEvent="getUserInfo"></authLogin>
   <view class="topCollect {{isCollect? 'on':''}}">
     点击<text class="iconfont icon-more"></text>添加到我的小程序<text class="iconfont icon-jiantou1"></text>
@@ -33,10 +33,10 @@
   </view>
   <view class="list">
     <view class="item">
-      <navigator url="/pages/wish/setup/setup" hover-class="none"><image src="/images/item_3.png" mode="widthFix"></image></navigator>
+      <navigator url="/pages/wish/setup" hover-class="none"><image src="/images/item_3.png" mode="widthFix"></image></navigator>
     </view>
     <view class="item">
-      <navigator url="/pages/flag/setup/setup" hover-class="none"><image src="/images/item_1.png" mode="widthFix"></image></navigator>
+      <navigator url="/pages/flag/setup" hover-class="none"><image src="/images/item_1.png" mode="widthFix"></image></navigator>
     </view>
     <view class="item">
       <navigator url="/pages/lovers/lovers" hover-class="none"><image src="/images/item_2.png" mode="widthFix"></image></navigator>

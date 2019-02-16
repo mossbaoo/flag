@@ -32,6 +32,18 @@ Page({
     })
   },
 
+  goback() {
+    wx.navigateBack({
+      delta: 1,
+    })
+  },
+  
+  gohome() {
+    wx.navigateBack({
+      delta: 5,
+    })
+  },
+
   // 分享
 	onShareAppMessage(res) {
     return {

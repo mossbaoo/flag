@@ -4,6 +4,10 @@
 -->
 
 <view class="container">
+  <view class="backhome">
+    <button bindtap="goback"><text class="iconfont icon-back"></text></button>
+    <button bindtap="gohome"><text class="iconfont icon-home"></text></button>
+  </view>
   <view class="user {{scrollTop>50? 'on':''}}">
     <view class="head"><image src="{{userInfo.avatarUrl}}" mode="widthFix"></image></view>
     <view class="name">{{userInfo.nickName}}</view>

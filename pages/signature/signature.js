@@ -7,7 +7,7 @@ const app = getApp()
 
 Page({
   data: {
-    title:'个性签名',
+    barTitle: '个性签名',
     dataArr: [
       '如果爱，请深爱；若不爱，请离开。',
       '请不要迷恋哥，哥只是一个传说。',

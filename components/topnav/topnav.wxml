@@ -11,6 +11,7 @@
         <button bindtap="goback" hover-class="button-hover"><text class="iconfont icon-back"></text></button>
         <button bindtap="gohome" hover-class="button-hover"><text class="iconfont icon-home"></text></button>
       </view>
+      <view class="leftNull" wx:else></view>
       <view class="title">{{innerTitle}}</view>
       <view class="right"></view>
     </view>

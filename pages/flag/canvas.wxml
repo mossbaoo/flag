@@ -4,14 +4,15 @@
 -->
 
 <view class="container">
-  <topnav inner-title="{{title}}" is-show-back="true"></topnav>
+  <topnav inner-title="{{barTitle}}" is-show-back="true"></topnav>
   <view class="canvas_w" style="height: {{canvasHeight}}px;">
-    <view class="shareCanvas">
+    <view class="shareCanvas" hidden="{{!showCanvas}}">
       <canvas canvas-id="shareCanvas" style="width: {{canvasWidth}}px; height: {{canvasHeight}}px;"></canvas>
     </view>
-    <view class="canvas">
+    <view class="canvas" hidden="{{!showCanvas}}">
       <canvas canvas-id="canvas" style="width: {{canvasWidth}}px; height: {{canvasHeight}}px;"></canvas>
     </view>
+    <view class="canvasImage" wx:if="{{!showCanvas}}"><image src="{{canvasImage}}" mode="widthFix" style="width: {{canvasWidth}}px;"></image></view>
   </view>
   <view class="bottom">
     <button bindtap="saveImage">保存海报</button>

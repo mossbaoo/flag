@@ -4,10 +4,11 @@
  */
 
 const app = getApp();
-const util = require('../../../utils/util.js');
+const util = require('../../utils/util.js');
 
 Page({
 	data: {
+		barTitle: '我的flag',
 		logo: '/images/logo2.png',
 		goodsImage: null,
 		code: '/images/code.jpg',
@@ -40,6 +41,9 @@ Page({
 		colorValue: '#000',
 		setType: 0,
 		decorate: 0,
+		showCanvas: true,
+		canvasImage: null,
+		shareCanvasImage: null
 	},
 
 	onLoad() {
@@ -64,7 +68,7 @@ Page({
 
 	// 描绘画布
 	drawCanvas(color=this.data.colorArr[0].level1, decorate=this.data.decorate) {
-		console.log(111)
+		let that = this;
 		var ctx = wx.createCanvasContext('canvas')
 		// 设置背景
 		ctx.setFillStyle(color)
@@ -104,11 +108,29 @@ Page({
 		}
 
 		// 完成
-    ctx.draw()
+		ctx.draw()
+
+		wx.showLoading({
+			title: '图片生成中',
+		})
+		
+		setTimeout(()=>{
+			wx.canvasToTempFilePath({
+				canvasId: 'canvas',
+				success(res) {
+					that.setData({
+						canvasImage: res.tempFilePath,
+						showCanvas: false
+					})
+					wx.hideLoading()
+				}
+			})
+		}, 500)
+		
 	},
 
 	drawShareCanvas(color=this.data.colorArr[0].level1, decorate=this.data.decorate) {
-		console.log(222)
+		let that = this;
 		var ctx = wx.createCanvasContext('shareCanvas')
 		// 设置背景
 		ctx.setFillStyle(color)
@@ -153,7 +175,24 @@ Page({
 		}
 
 		// 完成
-    ctx.draw()
+		ctx.draw()
+		
+		wx.showLoading({
+			title: '图片生成中',
+		})
+		
+		setTimeout(()=>{
+			wx.canvasToTempFilePath({
+				canvasId: 'shareCanvas',
+				success(res) {
+					that.setData({
+						shareCanvasImage: res.tempFilePath,
+						showCanvas: false
+					})
+					wx.hideLoading()
+				}
+			})
+		}, 500)
 	},
 
 	// 切换设置类型
@@ -173,7 +212,8 @@ Page({
 			})
 		}
 		this.setData({
-			colorValue: e.currentTarget.dataset.color
+			colorValue: e.currentTarget.dataset.color,
+			showCanvas: true
 		})
 		this.drawCanvas(e.currentTarget.dataset.color);
 		this.drawShareCanvas(e.currentTarget.dataset.color);
@@ -183,27 +223,22 @@ Page({
 	decoratePicker(e) {
 		if(e.currentTarget.dataset.id != this.data.decorate) {
 			this.setData({
-				decorate: e.currentTarget.dataset.id
+				decorate: e.currentTarget.dataset.id,
+				showCanvas: true
 			})
 			this.drawCanvas(this.data.colorValue, e.currentTarget.dataset.id);
 			this.drawShareCanvas(this.data.colorValue, e.currentTarget.dataset.id);
 		}
 	},
 
-	// 生成图片并保存到本地
+	// 保存到本地
 	saveImage() {
-		wx.canvasToTempFilePath({
-			canvasId: 'shareCanvas',
+		wx.saveImageToPhotosAlbum({
+			filePath: this.data.shareCanvasImage,
 			success(res) {
-				console.log(res)
-				wx.saveImageToPhotosAlbum({
-					filePath: res.tempFilePath,
-					success(res) {
-						wx.showToast({
-							title: '保存成功',
-							icon: 'success'
-						})
-					}
+				wx.showToast({
+					title: '保存成功',
+					icon: 'success'
 				})
 			}
 		})
