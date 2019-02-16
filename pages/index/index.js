@@ -7,11 +7,18 @@ const app = getApp()
 
 Page({
   data: {
+    barTitle: '码了个宝',
+    menuArr: [
+      {name: '新年愿望', path: '/pages/wish/setup', image: '/images/item_3.png'},
+      {name: '立个flag', path: '/pages/flag/setup', image: '/images/item_1.png'},
+      {name: '情侣专区', path: '/pages/lovers/lovers', image: '/images/item_2.png'},
+      {name: '个性签名', path: '/pages/signature/signature', image: '/images/item_5.png'},
+      {name: '快戳我', path: '/pages/button/button', image: '/images/item_5.png'},
+    ],
     userInfo: {},
     hasUserInfo: true,
     isCollect: false,
     timeName: '',
-    barTitle: '码了个宝'
   },
 
   onShow() {

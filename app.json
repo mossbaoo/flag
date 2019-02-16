@@ -8,7 +8,8 @@
     "pages/wish/canvas",
     "pages/lovers/lovers",
     "pages/lovers/showAffection/setup",
-    "pages/signature/signature"
+    "pages/signature/signature",
+    "pages/button/button"
   ],
   "window":{
     "backgroundTextStyle":"light",

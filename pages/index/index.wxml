@@ -32,17 +32,10 @@
     </view>
   </view>
   <view class="list">
-    <view class="item">
-      <navigator url="/pages/wish/setup" hover-class="none"><image src="/images/item_3.png" mode="widthFix"></image></navigator>
-    </view>
-    <view class="item">
-      <navigator url="/pages/flag/setup" hover-class="none"><image src="/images/item_1.png" mode="widthFix"></image></navigator>
-    </view>
-    <view class="item">
-      <navigator url="/pages/lovers/lovers" hover-class="none"><image src="/images/item_2.png" mode="widthFix"></image></navigator>
-    </view>
-    <view class="item">
-      <navigator url="/pages/signature/signature" hover-class="none"><image src="/images/item_5.png" mode="widthFix"></image></navigator>
-    </view>
+    <block wx:for="{{menuArr}}" wx:for-index="index" wx:for-item="item">
+      <view class="item">
+        <navigator url="{{item.path}}" hover-class="none"><image src="{{item.image}}" mode="widthFix"></image></navigator>
+      </view>
+    </block>
   </view>
 </view>

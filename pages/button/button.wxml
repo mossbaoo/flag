@@ -1,0 +1,40 @@
+<!--
+  Page: 戳一戳
+  Author: Moss
+-->
+
+<view class="container">
+  <topnav inner-title="{{barTitle}}" is-show-back="true"></topnav>
+  <view class="content">
+    <view class="top">
+      <view class="time">
+        <view class="text">时间</view>
+        <view class="num">{{time_s}}:{{time_ms}}</view>
+      </view>
+      <view class="count">
+        <view class="text">次数</view>
+        <view class="num">{{count}}</view>
+      </view>
+    </view>
+    <view class="button"><button bindtap="click">戳我</button></view>
+  </view>
+  <view class="fixed_box" wx:if="{{isCome}}">
+    <view class="title">戳一戳</view>
+    <view class="text">你10秒钟能戳多少次？</view>
+    <view class="text">是时候展现你的手速了</view>
+    <view class="button">
+      <button class="btn1" bindtap="start">接受挑战</button>
+      <button class="btn2" bindtap="exit">认怂退出</button>
+    </view>
+  </view>
+  <view class="fixed_box" wx:if="{{isEnd}}">
+    <view class="title">挑战结束</view>
+    <view class="text">真棒！你10秒钟戳了{{count}}次</view>
+    <view class="text">把战绩分享给好友吧</view>
+    <view class="button">
+      <button class="btn1" open-type="share">分享战绩</button>
+      <button class="btn2" bindtap="start">重新挑战</button>
+    </view>
+  </view>
+  <view class="fixed_mask" wx:if="{{isCome||isEnd}}"></view>
+</view>

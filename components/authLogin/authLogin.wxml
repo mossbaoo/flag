@@ -6,12 +6,9 @@
 <view>
 	<view class="login_mask" wx:if="{{!hasUserInfo}}"></view>
   <view class="login_box" wx:if="{{!hasUserInfo}}">
-    <view class="bg"><image src="/images/login_bg.png" mode="widthFix"></image></view>
-    <view class="content">
-      <!-- <view class="logo"><image src="/images/logo.jpg" mode="widthFix"></image></view> -->
-      <!-- <view class="icon"><text class="iconfont icon-auth"></text></view> -->
-      <view class="text">微信登录，体验更好的服务</view>
-      <view class="btn"><button open-type="getUserInfo" bindgetuserinfo="getUserInfo">微信授权</button></view>
-    </view>
+    <!-- <view class="logo"><image src="/images/logo.jpg" mode="widthFix"></image></view> -->
+    <view class="icon"><text class="iconfont icon-auth"></text></view>
+    <view class="text">微信登录，体验更好的服务</view>
+    <view class="btn"><button open-type="getUserInfo" bindgetuserinfo="getUserInfo">立即登录</button></view>
   </view>
 </view>

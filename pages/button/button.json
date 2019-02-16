@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "戳一戳",
+  "disableScroll": true,
+  "usingComponents": {
+    "topnav": "/components/topnav/topnav"
+  }
+}

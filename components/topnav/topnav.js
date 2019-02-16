@@ -29,8 +29,8 @@ Component({
       })
     },
     gohome() {
-      wx.navigateBack({
-        delta: 5,
+      wx.reLaunch({
+        url: '/pages/index/index'
       })
     }
   }
