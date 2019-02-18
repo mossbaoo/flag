@@ -7,7 +7,11 @@ const app = getApp()
 
 Page({
   data: {
-    barTitle: '戳一戳',
+    barData: {
+      title: '戳一戳',
+      isShowBack: true,
+      isHome: false,
+    },
     statusBarHeight: app.globalData.statusBarHeight,
     titleBarHeight: app.globalData.titleBarHeight,
     time_s: '10',
@@ -17,9 +21,18 @@ Page({
     isEnd: false,
   },
 
+  onLoad() {
+    let pages = getCurrentPages();
+    let prevPage = pages[pages.length - 2];
+    if(!prevPage) {
+      this.setData({
+        ['barData.isShowBack']: false
+      })
+    }
+  },
+
   // 点击
   click() {
-    let that = this;
     this.setData({
       count: this.data.count+1
     })
@@ -27,9 +40,17 @@ Page({
 
   // 退出
   exit() {
-    wx.navigateBack({
-      delta: 1
-    })
+    var pages = getCurrentPages();
+    var prevPage = pages[pages.length - 2];
+    if(prevPage) {
+      wx.navigateBack({
+        delta: 1
+      })
+    }else {
+      wx.reLaunch({
+        url: '/pages/index/index'
+      })
+    }
   },
 
   // 开始

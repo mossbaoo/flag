@@ -7,7 +7,11 @@ const app = getApp()
 
 Page({
   data: {
-    barTitle: '个性签名',
+    barData: {
+      title: '个性签名',
+      isShowBack: true,
+      isHome: false,
+    },
     dataArr: [
       '如果爱，请深爱；若不爱，请离开。',
       '请不要迷恋哥，哥只是一个传说。',
@@ -25,7 +29,7 @@ Page({
     ],
     isGuide: false,
     statusBarHeight: app.globalData.statusBarHeight,
-    titleBarHeight: app.globalData.titleBarHeight
+    titleBarHeight: app.globalData.titleBarHeight,
   },
 
   onLoad() {
@@ -33,9 +37,13 @@ Page({
       isGuide: true
     })
 
-    var pages = getCurrentPages();
-    var prevPage = pages[pages.length - 2];
-    console.log(prevPage)
+    let pages = getCurrentPages();
+    let prevPage = pages[pages.length - 2];
+    if(!prevPage) {
+      this.setData({
+        ['barData.isShowBack']: false
+      })
+    }
   },
 
   onReady() {
@@ -82,7 +90,7 @@ Page({
 	onShareAppMessage(res) {
     return {
       title: '回忆杀！那些年的个性签名，有没有你用过的？',
-			path: '/pages/index/index',
+			path: '/pages/signature/signature',
 			imageUrl: '/images/share_img1.jpg',
 			success: res=> {
         wx.showToast({

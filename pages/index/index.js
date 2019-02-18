@@ -7,7 +7,11 @@ const app = getApp()
 
 Page({
   data: {
-    barTitle: '码了个宝',
+    barData: {
+      title: '码了个宝',
+      isShowBack: true,
+      isHome: true,
+    },
     menuArr: [
       {name: '新年愿望', path: '/pages/wish/setup', image: '/images/item_3.png'},
       {name: '立个flag', path: '/pages/flag/setup', image: '/images/item_1.png'},

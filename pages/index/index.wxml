@@ -4,7 +4,7 @@
 -->
 
 <view class="container">
-  <topnav inner-title="{{barTitle}}" is-show-back="false"></topnav>
+  <topnav inner-title="{{barData.title}}" is-show-back="{{barData.isShowBack}}" is-home="{{barData.isHome}}"></topnav>
   <authLogin wx:if="{{!hasUserInfo}}" bind:getUserInfoEvent="getUserInfo"></authLogin>
   <view class="topCollect {{isCollect? 'on':''}}">
     点击<text class="iconfont icon-more"></text>添加到我的小程序<text class="iconfont icon-jiantou1"></text>

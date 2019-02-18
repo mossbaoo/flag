@@ -4,7 +4,7 @@
 -->
 
 <view class="container">
-  <topnav inner-title="{{barTitle}}" is-show-back="true"></topnav>
+  <topnav inner-title="{{barData.title}}" is-show-back="{{barData.isShowBack}}" is-home="{{barData.isHome}}"></topnav>
   <view class="banner"><image src="/images/wish_banner.jpg" mode="widthFix"></image></view>
   <view class="form">
     <view class="item">

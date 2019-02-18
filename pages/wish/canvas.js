@@ -8,7 +8,11 @@ const util = require('../../utils/util.js');
 
 Page({
 	data: {
-		barTitle: '我的新年愿望',
+		barData: {
+      title: '我的新年愿望',
+      isShowBack: true,
+      isHome: false,
+    },
 		logo: '/images/logo2.png',
 		code: '/images/code.jpg',
 		myWishArr: [],
@@ -24,6 +28,14 @@ Page({
 		this.setData({
 			myWishArr: app.globalData.myWishArr
 		})
+
+		let pages = getCurrentPages();
+    let prevPage = pages[pages.length - 2];
+    if(!prevPage) {
+      this.setData({
+        ['barData.isShowBack']: false
+      })
+    }
 
 		this.drawCanvas();
 		this.drawShareCanvas();
@@ -167,7 +179,7 @@ Page({
 	onShareAppMessage(res) {
     return {
       title: '我在这里许了新年愿望，你也快来吧',
-			path: '/pages/index/index',
+			path: '/pages/wish/setup',
 			imageUrl: '/images/share_img3.png',
 			success: res=> {
         wx.showToast({

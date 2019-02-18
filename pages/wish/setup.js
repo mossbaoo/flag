@@ -4,7 +4,11 @@ const util = require('../../utils/util.js')
 
 Page({
   data: {
-    barTitle: '许愿中',
+    barData: {
+      title: '许愿中',
+      isShowBack: true,
+      isHome: false,
+    },
     myWishArr: [
       {focus: false, value: ''},
       {focus: false, value: ''},
@@ -13,8 +17,13 @@ Page({
   },
 
   onLoad() {
-    let that = this;
-    
+    let pages = getCurrentPages();
+    let prevPage = pages[pages.length - 2];
+    if(!prevPage) {
+      this.setData({
+        ['barData.isShowBack']: false
+      })
+    }
   },
 
   bindfocus(e) {
@@ -63,7 +72,7 @@ Page({
 	onShareAppMessage(res) {
     return {
       title: '我在这里许了新年愿望，你也快来吧',
-			path: '/pages/index/index',
+			path: '/pages/wish/setup',
 			imageUrl: '/images/share_img3.png',
 			success: res=> {
         wx.showToast({

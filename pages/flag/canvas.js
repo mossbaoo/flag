@@ -8,7 +8,11 @@ const util = require('../../utils/util.js');
 
 Page({
 	data: {
-		barTitle: '我的flag',
+		barData: {
+      title: '我的flag',
+      isShowBack: true,
+      isHome: false,
+    },
 		logo: '/images/logo2.png',
 		goodsImage: null,
 		code: '/images/code.jpg',
@@ -52,6 +56,14 @@ Page({
 			myFlagArr: app.globalData.myFlagArr,
 			canvasHeight: app.globalData.myFlagArr.length*40+230+130
 		})
+
+		let pages = getCurrentPages();
+    let prevPage = pages[pages.length - 2];
+    if(!prevPage) {
+      this.setData({
+        ['barData.isShowBack']: false
+      })
+    }
 
 		// 获取系统信息
 		wx.getSystemInfo({
@@ -248,7 +260,7 @@ Page({
 	onShareAppMessage(res) {
     return {
       title: '我在这里立了个flag，你也快来吧',
-			path: '/pages/index/index',
+			path: '/pages/flag/setup',
 			imageUrl: '/images/share_img1.jpg',
 			success: res=> {
         wx.showToast({

@@ -7,13 +7,23 @@ const app = getApp()
 
 Page({
   data: {
-    barTitle: '秀恩爱',
+    barData: {
+      title: '秀恩爱',
+      isShowBack: true,
+      isHome: false,
+    },
     image_a: '',
     image_b: '',
   },
 
   onLoad() {
-    
+    let pages = getCurrentPages();
+    let prevPage = pages[pages.length - 2];
+    if(!prevPage) {
+      this.setData({
+        ['barData.isShowBack']: false
+      })
+    }
   },
 
   chooseImage(e) {

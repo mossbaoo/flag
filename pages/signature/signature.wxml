@@ -4,7 +4,7 @@
 -->
 
 <view class="container">
-  <topnav inner-title="{{barTitle}}" is-show-back="true"></topnav>
+  <topnav inner-title="{{barData.title}}" is-show-back="{{barData.isShowBack}}" is-home="{{barData.isHome}}"></topnav>
   <view class="list">
     <block wx:for="{{dataArr}}" wx:for-item="item" wx:for-index="index">
       <view class="item" data-index="{{index}}" bindtap="copy">{{item}}</view>

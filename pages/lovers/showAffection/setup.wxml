@@ -4,7 +4,7 @@
 -->
 
 <view class="container">
-  <topnav inner-title="{{barTitle}}" is-show-back="true"></topnav>
+  <topnav inner-title="{{barData.title}}" is-show-back="{{barData.isShowBack}}" is-home="{{barData.isHome}}"></topnav>
   <view class="pageTop">
     <view class="title">此时此刻，你想到的那个<text>Ta</text>是谁？</view>
     <view class="text">是男女朋友？还是你的爱豆？</view>

@@ -7,11 +7,11 @@
   <view class="header">
     <view class="status-bar" style="height:{{statusBarHeight}}px"></view>
     <view class="title-bar" style="height:{{titleBarHeight}}px">
-      <view class="left" wx:if="{{isShowBack=='true'}}">
-        <button bindtap="goback" hover-class="button-hover"><text class="iconfont icon-back"></text></button>
+      <view class="left" wx:if="{{!isHome}}">
+        <button bindtap="goback" hover-class="button-hover" wx:if="{{isShowBack}}"><text class="iconfont icon-back"></text></button>
         <button bindtap="gohome" hover-class="button-hover"><text class="iconfont icon-home"></text></button>
       </view>
-      <view class="leftNull" wx:else></view>
+      <view class="leftNull" wx:if="{{isHome}}"></view>
       <view class="title">{{innerTitle}}</view>
       <view class="right"></view>
     </view>

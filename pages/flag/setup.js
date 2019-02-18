@@ -4,7 +4,11 @@ const util = require('../../utils/util.js')
 
 Page({
   data: {
-    barTitle: '立个flag',
+    barData: {
+      title: '立个flag',
+      isShowBack: true,
+      isHome: false,
+    },
 		statusBarHeight: app.globalData.statusBarHeight,
     titleBarHeight: app.globalData.titleBarHeight,
     flagArr: [
@@ -44,6 +48,14 @@ Page({
   onLoad() {
     let that = this;
     this.showFlag();
+
+    let pages = getCurrentPages();
+    let prevPage = pages[pages.length - 2];
+    if(!prevPage) {
+      this.setData({
+        ['barData.isShowBack']: false
+      })
+    }
 
     let query = wx.createSelectorQuery();
     query.select('.myFlagList').boundingClientRect(rect=>{
@@ -222,7 +234,7 @@ Page({
 	onShareAppMessage(res) {
     return {
       title: '新年立个flag，我在这里等你',
-			path: '/pages/index/index',
+			path: '/pages/flag/setup',
 			imageUrl: '/images/share_img1.jpg',
 			success: res=> {
         wx.showToast({

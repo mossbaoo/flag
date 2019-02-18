@@ -69,7 +69,7 @@
   z-index: 99;
   background: #fff;
   border-radius: 10rpx;
-  padding: 30rpx;
+  padding: 30rpx 50rpx;
   box-sizing: border-box;
 }
 .container .fixed_box .title {

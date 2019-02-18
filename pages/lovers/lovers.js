@@ -7,12 +7,21 @@ const app = getApp()
 
 Page({
   data: {
-    barTitle: '情侣专区',
-    
+    barData: {
+      title: '情侣专区',
+      isShowBack: true,
+      isHome: false,
+    },
   },
 
   onLoad() {
-    
+    let pages = getCurrentPages();
+    let prevPage = pages[pages.length - 2];
+    if(!prevPage) {
+      this.setData({
+        ['barData.isShowBack']: false
+      })
+    }
   },
 
   // 分享

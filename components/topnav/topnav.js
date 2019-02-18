@@ -13,7 +13,11 @@ Component({
       value: '头部标题'
     },
     isShowBack: {
-      type: String,
+      type: Boolean,
+      value: true
+    },
+    isHome: {
+      type: Boolean,
       value: true
     }
   },

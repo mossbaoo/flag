@@ -149,14 +149,15 @@ button::after {
   align-items: center;
   padding: 0;
   border-radius: 0;
+  border-right: 1rpx solid #e1e1e1;
 }
 .title-bar .left button text {
   font-size: 34rpx;
   color: #000;
   font-weight: bold;
 }
-.title-bar .left button:first-child {
-  border-right: 1rpx solid #e1e1e1;
+.title-bar .left button:last-child {
+  border-right: none;
 }
 .title-bar .leftNull {
   width: 158rpx;

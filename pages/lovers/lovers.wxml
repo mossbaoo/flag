@@ -4,7 +4,7 @@
 -->
 
 <view class="container">
-  <topnav inner-title="{{barTitle}}" is-show-back="true"></topnav>
+  <topnav inner-title="{{barData.title}}" is-show-back="{{barData.isShowBack}}" is-home="{{barData.isHome}}"></topnav>
   <view class="list">
     <view class="item">
       <navigator url="/pages/lovers/showAffection/setup" hover-class="none"><image src="/images/item_4.png" mode="widthFix"></image></navigator>
