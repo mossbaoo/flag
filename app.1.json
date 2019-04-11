@@ -4,6 +4,10 @@
     "pages/personal/personal",
     "pages/flag/setup",
     "pages/flag/canvas",
+    "pages/wish/setup",
+    "pages/wish/canvas",
+    "pages/lovers/lovers",
+    "pages/lovers/showAffection/setup",
     "pages/signature/signature",
     "pages/button/button"
   ],

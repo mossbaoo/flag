@@ -91,7 +91,7 @@ Page({
     return {
       title: '回忆杀！那些年的个性签名，有没有你用过的？',
 			path: '/pages/signature/signature',
-			imageUrl: '/images/share_img1.jpg',
+			imageUrl: '/images/share_img5.jpg',
 			success: res=> {
         wx.showToast({
 					title: '转发成功'

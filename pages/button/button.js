@@ -19,6 +19,8 @@ Page({
     count: 0,
     isCome: true,
     isEnd: false,
+    countDownNum: 3,
+    isCountDown: false,
   },
 
   onLoad() {
@@ -58,16 +60,42 @@ Page({
     this.setData({
       isCome: false,
       isEnd: false,
-      time_s: '09',
-      time_ms: '99',
+      time_s: '10',
+      time_ms: '00',
       count: 0,
+      countDownNum: 3,
+      isCountDown: true,
     })
-    this.timeout();
+    this.countDown();
   },
 
   // 倒计时
-  timeout() {
-    var time = setInterval(()=>{
+  countDown() {
+    var countDown_timer = setInterval(()=>{
+      if(this.data.countDownNum > 0 || this.data.countDownNum != '开始') {
+        if(this.data.countDownNum == 1) {
+          this.setData({
+            countDownNum: '开始'
+          })
+        }else {
+          this.setData({
+            countDownNum: this.data.countDownNum-1
+          })
+        }
+      }else {
+        this.setData({
+          isCountDown: false
+        })
+        this.gameStart();
+        clearInterval(countDown_timer);
+        return false;
+      }
+    }, 1000)
+  },
+
+  // 开始游戏
+  gameStart() {
+    var gameStart_timer = setInterval(()=>{
       if(this.data.time_s > 0 || this.data.time_ms > 0) {
         if(this.data.time_ms > 0) {
           this.setData({
@@ -83,7 +111,7 @@ Page({
         this.setData({
           isEnd: true
         })
-        clearInterval(time);
+        clearInterval(gameStart_timer);
         return false;
       }
     }, 10)
@@ -108,22 +136,41 @@ Page({
 
   // 分享
 	onShareAppMessage(res) {
-    return {
-      title: '我10秒钟能戳'+this.data.count+'次，快来挑战吧',
-			path: '/pages/button/button',
-			imageUrl: '/images/share_img1.jpg',
-			success: res=> {
-        wx.showToast({
-					title: '转发成功'
-				})
-      },
-      fail: res=> {
-        wx.showToast({
-					title: '转发失败',
-					icon: 'none'
-				})
+    if(res.from == 'button'){
+      return {
+        title: '我10秒钟能戳'+this.data.count+'次，快来挑战吧',
+        path: '/pages/button/button',
+        imageUrl: '/images/share_img4.png',
+        success: res=> {
+          wx.showToast({
+            title: '转发成功'
+          })
+        },
+        fail: res=> {
+          wx.showToast({
+            title: '转发失败',
+            icon: 'none'
+          })
+        }
+      }
+    }else {
+      return {
+        title: '你10秒钟能戳多少次？是时候展现你的手速了！',
+        path: '/pages/button/button',
+        imageUrl: '/images/share_img4.png',
+        success: res=> {
+          wx.showToast({
+            title: '转发成功'
+          })
+        },
+        fail: res=> {
+          wx.showToast({
+            title: '转发失败',
+            icon: 'none'
+          })
+        }
       }
     }
-	}
+	},
 
 })

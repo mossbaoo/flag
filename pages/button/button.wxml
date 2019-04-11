@@ -24,7 +24,7 @@
     <view class="text">是时候展现你的手速了</view>
     <view class="button">
       <button class="btn1" bindtap="start">接受挑战</button>
-      <button class="btn2" bindtap="exit">认怂退出</button>
+      <button class="btn2" bindtap="exit">认怂退出</button> 
     </view>
   </view>
   <view class="fixed_box" wx:if="{{isEnd}}">
@@ -37,4 +37,5 @@
     </view>
   </view>
   <view class="fixed_mask" wx:if="{{isCome||isEnd}}"></view>
+  <view class="countDown" wx:if="{{isCountDown}}">{{countDownNum}}</view>
 </view>
