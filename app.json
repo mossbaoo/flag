@@ -5,7 +5,9 @@
     "pages/flag/setup",
     "pages/flag/canvas",
     "pages/signature/signature",
-    "pages/button/button"
+    "pages/button/button",
+    "pages/werewolf/setup",
+    "pages/werewolf/result"
   ],
   "window":{
     "backgroundTextStyle":"light",

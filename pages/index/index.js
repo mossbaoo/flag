@@ -18,6 +18,7 @@ Page({
       // {name: '情侣专区', path: '/pages/lovers/lovers', image: '/images/item_2.png'},
       {name: '个性签名', path: '/pages/signature/signature', image: '/images/item_5.png'},
       {name: '快戳我', path: '/pages/button/button', image: '/images/item_6.png'},
+      {name: '狼人杀组队', path: '/pages/werewolf/setup', image: '/images/item_7.png'},
     ],
     userInfo: {},
     hasUserInfo: true,

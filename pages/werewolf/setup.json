@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "狼人杀配置",
+  "usingComponents": {
+    "topnav": "/components/topnav/topnav"
+  }
+}

@@ -42,8 +42,9 @@
 				{
 					"id": 0,
 					"name": "11",
-					"pathName": "pages/signature/signature",
-					"query": ""
+					"pathName": "pages/werewolf/setup",
+					"query": "",
+					"scene": null
 				}
 			]
 		}

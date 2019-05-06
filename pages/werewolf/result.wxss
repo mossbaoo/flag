@@ -1,0 +1,165 @@
+.container {
+  background: #fff;
+}
+.container .list {
+  padding: 50rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.container .list .li {
+  font-size: 30rpx;
+  color: #333;
+  width: 120rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  margin-right: 56.6666rpx;
+  margin-bottom: 50rpx;
+  text-align: center;
+  background: #edfbeb;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+.container .list .li:nth-child(4n) {
+  margin-right: 0;
+}
+.container .list .li .iconfont {
+  font-size: 60rpx;
+  color: #fff;
+}
+.container .list .li .num {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #20ac19;
+  color: #fff;
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 35rpx;
+  border-radius: 0 0 50px 0;
+  font-size: 24rpx;
+  text-indent: -5rpx;
+}
+.container .list .li.disabled {
+  background: #eaeaea;
+}
+.container .list .li.disabled .num {
+  background: #555;
+}
+.container .card {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+}
+.container .card image {
+  width: 500rpx;
+  margin: 300rpx auto 50rpx;
+  display: block;
+  border-radius: 10px;
+}
+.container .card .button {
+  width: 500rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #201c2b;
+  border-radius: 10px;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 30rpx;
+  color: #fff;
+}
+.container .start .title {
+  font-size: 36rpx;
+  color: #333;
+  line-height: 80rpx;
+  text-align: center;
+}
+.container .start .button {
+  width: 650rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  background: #20ac19;
+  border-radius: 5px;
+  margin: 0 auto;
+  font-size: 30rpx;
+  color: #fff;
+}
+.container .judge {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+}
+.container .judge .judge_c {
+  width: 650rpx;
+  height: 800rpx;
+  background: #fff;
+  border-radius: 10px;
+  margin: 150rpx auto 0;
+  overflow: hidden;
+}
+.container .judge .judge_c .top {
+  background: #eaeaea;
+}
+.container .judge .judge_c .top view {
+  float: left;
+  font-size: 26rpx;
+  color: #333;
+  line-height: 70rpx;
+  text-align: center;
+  width: 162.5rpx;
+}
+.container .judge .judge_c .ul {
+  height: 640rpx;
+  overflow: scroll;
+}
+.container .judge .judge_c .ul .li {
+  border-bottom: 1px dashed #eaeaea;
+}
+.container .judge .judge_c .ul .li view {
+  float: left;
+  font-size: 26rpx;
+  color: #333;
+  line-height: 70rpx;
+  text-align: center;
+  width: 162.5rpx;
+}
+.container .judge .judge_c .ul .li view input {
+  width: 100%;
+  height: 60rpx;
+  margin-top: 6rpx;
+}
+.container .judge .judge_c .ul .li view checkbox .wx-checkbox-input {
+  border-radius: 5px;
+  height: 46rpx;
+  width: 46rpx;
+  margin-top: -6rpx;
+  margin-left: 10rpx;
+}
+.container .judge .judge_c .ul .li:last-child {
+  border: none;
+}
+.container .judge .judge_c .close {
+  height: 90rpx;
+  text-align: center;
+  border-top: 1px solid #ddd;
+}
+.container .judge .judge_c .close view {
+  display: inline-block;
+  width: 300rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  background: #20ac19;
+  border-radius: 10px;
+  font-size: 28rpx;
+  color: #fff;
+  margin-top: 15rpx;
+}
